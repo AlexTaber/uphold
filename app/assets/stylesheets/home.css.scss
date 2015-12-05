@@ -5,7 +5,7 @@
   min-height: 100%;
   object-fit: cover;
   margin-top: -50px;
-  position: fixed;
+  position: absolute;
 }
 
 .home-header-container {
@@ -53,9 +53,9 @@
 .header-nav {
   background-color: $dark;
   height: 10vh;
-  position: fixed;
   width: 100%;
   z-index: 999;
+  position: fixed;
 
   li {
     display: inline-block;
