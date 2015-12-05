@@ -72,19 +72,18 @@
 }
 
 .service {
-  height: 44.9vh;
-  background-color: rgba($dark, 0.9);
-  margin: 0;
-  width: 49.9vw;
+  height: 22.3vh;
+  width: 100vw;
   float: left;
-  z-index: 1;
-  text-align: center;
   color: $gold;
   font-family: 'Josefin Slab', serif;
-  font-size: 5vh;
+  font-size: 4vh;
+  text-align: center;
+  background-color: rgba($dark, 0.9);
+  border-bottom: 0.2vh solid rgba($gold, 0.4);
 
   p {
-    padding-top: 20vh;
+    padding-top: 9.2vh;
   }
 
   &:hover {
@@ -92,15 +91,37 @@
   }
 }
 
-#tl {
-  border-right: 0.2vw solid rgba($gold, 0.4);
-  border-bottom: 0.2vh solid rgba($gold, 0.4);
-}
+@media (min-width: 700px) {
+  .service {
+    height: 44.9vh;
+    background-color: rgba($dark, 0.9);
+    margin: 0;
+    width: 49.9vw;
+    float: left;
+    text-align: center;
+    color: $gold;
+    font-family: 'Josefin Slab', serif;
+    font-size: 5vh;
 
-#tr {
-  border-bottom: 0.2vh solid rgba($gold, 0.4);
-}
+    p {
+      padding-top: 20vh;
+    }
 
-#bl {
-  border-right: 0.2vw solid rgba($gold, 0.4);
+    &:hover {
+      background-color: rgba($dark, 0.6);
+    }
+  }
+
+  #tl {
+    border-right: 0.2vw solid rgba($gold, 0.4);
+    border-bottom: 0.2vh solid rgba($gold, 0.4);
+  }
+
+  #tr {
+    border-bottom: 0.2vh solid rgba($gold, 0.4);
+  }
+
+  #bl {
+    border-right: 0.2vw solid rgba($gold, 0.4);
+  }
 }
