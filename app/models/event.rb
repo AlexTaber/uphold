@@ -4,4 +4,5 @@ class Event < ActiveRecord::Base
   has_many :videos, as: :videoable
   has_many :images, as: :imageable
   has_many :sounds, as: :soundable
+  has_many :sales
 end
