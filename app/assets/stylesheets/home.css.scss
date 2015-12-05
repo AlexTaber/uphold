@@ -1,0 +1,69 @@
+.home-header-background {
+  height: 80vh;
+  zoom: 180%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  margin-top: -50px;
+  position: fixed;
+}
+
+.home-header-container {
+  position: relative;
+  background-color: rgba($gold,0.6);
+  height: 80vh;
+}
+
+.home-header {
+  position: fixed;
+  font-family: 'Josefin Slab', serif;
+  color: #FFCC00;
+  font-size: 4em;
+  text-align: center;
+  top: 18vh;
+
+  img {
+    padding-left: 20px;
+    height: 55vh;
+  }
+}
+
+.home-filler-container {
+  position: relative;
+  background-color: $dark;
+  height: 20vh;
+}
+
+.home-filler {
+  font-family: 'Josefin Slab', serif;
+  color: $gold;
+  font-size: 2em;
+  font-weight: 600;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header-nav {
+  background-color: $dark;
+  height: 10vh;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+
+  li {
+    display: inline-block;
+    color: $gold;
+    font-family: 'Josefin Slab', serif;
+    font-size: 4vh;
+    float: right;
+    margin-right: 16px;
+    margin-top: 2vh;
+  }
+}
