@@ -1,3 +1,3 @@
 class Link < ActiveRecord::Base
-  belongs_to :imageable, polymorphic: true
+  belongs_to :linkable, polymorphic: true
 end
