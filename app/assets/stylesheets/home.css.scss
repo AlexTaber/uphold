@@ -1,9 +1,9 @@
 .home-header-background {
-  min-height: 100vh;
-  min-width: 100vw;
-  height: auto;
-  width: auto;
-  overflow: hidden;
+  float:left;
+  width:100vw;;
+  height:100vh;
+  background:url("concert");
+  background-size:cover;
   position: fixed;
 }
 
@@ -69,13 +69,38 @@
 .services-home {
   position: relative;
   height: 90vh;
-  background-color: rgba($dark, 0.5);
 }
 
 .service {
-  height: 45vh;
+  height: 44.9vh;
+  background-color: rgba($dark, 0.9);
   margin: 0;
-  width: 50%;
+  width: 49.9vw;
   float: left;
   z-index: 1;
+  text-align: center;
+  color: $gold;
+  font-family: 'Josefin Slab', serif;
+  font-size: 5vh;
+
+  p {
+    padding-top: 20vh;
+  }
+
+  &:hover {
+    background-color: rgba($dark, 0.6);
+  }
+}
+
+#tl {
+  border-right: 0.2vw solid rgba($gold, 0.4);
+  border-bottom: 0.2vh solid rgba($gold, 0.4);
+}
+
+#tr {
+  border-bottom: 0.2vh solid rgba($gold, 0.4);
+}
+
+#bl {
+  border-right: 0.2vw solid rgba($gold, 0.4);
 }
