@@ -1,11 +1,10 @@
 .home-header-background {
-  height: 80vh;
-  zoom: 180%;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  margin-top: -50px;
-  position: absolute;
+  min-height: 100vh;
+  min-width: 100vw;
+  height: auto;
+  width: auto;
+  overflow: hidden;
+  position: fixed;
 }
 
 .home-header-container {
@@ -15,7 +14,7 @@
 }
 
 .home-header {
-  position: fixed;
+  position: absolute;
   font-family: 'Josefin Slab', serif;
   color: #FFCC00;
   font-size: 4em;
@@ -23,7 +22,6 @@
   top: 18vh;
 
   img {
-    padding-left: 20px;
     height: 55vh;
   }
 }
@@ -66,4 +64,18 @@
     margin-right: 16px;
     margin-top: 2vh;
   }
+}
+
+.services-home {
+  position: relative;
+  height: 90vh;
+  background-color: rgba($dark, 0.5);
+}
+
+.service {
+  height: 45vh;
+  margin: 0;
+  width: 50%;
+  float: left;
+  z-index: 1;
 }
