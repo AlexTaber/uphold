@@ -5,7 +5,7 @@ class CreateBands < ActiveRecord::Migration
       t.text    :bio
       t.integer :service_id
 
-      t.timestamps, null: false
+      t.timestamps null: false
     end
   end
 end

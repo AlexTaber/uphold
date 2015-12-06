@@ -1,0 +1,103 @@
+<div class="home-header-background"></div>
+
+<div class="home-header-container tab-0">
+  <!-- mobile Nav -->
+  <div class="mobile-nav-container">
+    <nav class="mobile-nav header-nav">
+      <li>
+        <%= link_to "UPHOLD", root_path %>
+      </li>
+      <li class="u-pull-right" id="mobile-nav-menu">
+        <i class="fa fa-bars"></i>
+      </li>
+    </nav>
+
+    <div class="mobile-nav-items">
+      <li class="mobile-dropdown">
+        Services <i class="fa fa-caret-down mobile-dropdown"></i>
+        <ul class="mobile-nav-services">
+          <li><%= link_to "Uphold LIVE", live_path %></li>
+          <li><%= link_to "Uphold Management", management_path %></li>
+          <li><%= link_to "Uphold Agency", agency_path %></li>
+          <li><%= link_to "Uphold Venue Center", venue_center_path %></li>
+        </ul>
+      </li>
+      <li>
+        <%= link_to "Media", media_path %>
+      </li>
+      <li>
+        <%= link_to "About", about_path %>
+      </li>
+      <li>
+        <%= link_to "Contact", contact_path %>
+      </li>
+    </div>
+  </div>
+  <!--  -->
+  <!-- Desktop Nav -->
+  <div class="desktop-nav-container">
+    <nav class="desktop-nav header-nav">
+      <%= link_to root_path do %>
+        <li>
+          UPHOLD
+        </li>
+      <% end %>
+      <li class="u-pull-right">
+        <%= link_to "Contact", contact_path %>
+      </li>
+      <li class="u-pull-right">
+        <%= link_to "About", about_path %>
+      </li>
+      <li class="u-pull-right">
+        <%= link_to "Media", media_path %>
+      </li>
+      <li class="u-pull-right dropdown">
+        Services <i class="fa fa-caret-down"></i>
+        <ul class="nav-services">
+          <li><%= link_to "Uphold LIVE", live_path %></li>
+          <li><%= link_to "Uphold Management", management_path %></li>
+          <li><%= link_to "Uphold Agency", agency_path %></li>
+          <li><%= link_to "Uphold Venue Center", venue_center_path %></li>
+        </ul>
+      </li>
+    </nav>
+  </div>
+  <!--  -->
+  <p class="twelve columns home-header">
+    <%= image_tag("logo", class: "home-header-logo") %>
+  </p>
+</div>
+
+<div class="home-filler-container">
+  <p class="home-filler">
+    What We Do
+    <i class="fa fa-arrow-down"></i>
+  </p>
+</div>
+
+<div class="twelve columns services-home">
+  <%= link_to live_path do %>
+    <div class="service live" id="tl">
+      <p class="service-title">Uphold LIVE</p>
+      <p class="service-text">Book Your Next Ticket Today</p>
+    </div>
+  <% end %>
+  <%= link_to management_path do %>
+    <div class="service live" id="tr">
+      <p class="service-title">Uphold Management</p>
+      <p class="service-text">Band Management Done Right</p>
+    </div>
+  <% end %>
+  <%= link_to agency_path do %>
+    <div class="service live" id="bl">
+      <p class="service-title">Uphold Agency</p>
+      <p class="service-text">Get Your Band's Next Gig</p>
+    </div>
+  <% end %>
+  <%= link_to venue_center_path do %>
+    <div class="service live">
+      <p class="service-title">Uphold Venue Center</p>
+      <p class="service-text">Have a Venue? Good. We Can Help.</p>
+    </div>
+  <% end %>
+</div>

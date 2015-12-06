@@ -1,0 +1,222 @@
+.home-header-background {
+  float:left;
+  width:100vw;;
+  height:100vh;
+  background:url("concert");
+  background-size:cover;
+  position: fixed;
+}
+
+.home-header-container {
+  position: relative;
+  background-color: rgba($gold,0.2);
+  height: 80vh;
+}
+
+.home-header {
+  position: absolute;
+  font-family: 'Josefin Slab', serif;
+  color: #FFCC00;
+  font-size: 4em;
+  text-align: center;
+  top: 18vh;
+
+  img {
+    height: 55vh;
+  }
+}
+
+.home-filler-container {
+  position: relative;
+  background-color: $dark;
+  height: 20vh;
+}
+
+.home-filler {
+  font-family: 'Josefin Slab', serif;
+  color: $gold;
+  font-size: 7vh;
+  font-weight: 600;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header-nav {
+  background-color: $dark;
+  height: $nav-height;
+  width: 100%;
+  z-index: 999;
+  position: fixed;
+
+  li {
+    display: inline-block;
+    color: $gold;
+    font-family: 'Josefin Slab', serif;
+    font-size: 4vh;
+    margin-right: 12px;
+    margin-left: 12px;
+    margin-top: 2vh;
+
+    a {
+      color: $gold;
+    }
+  }
+
+  li:hover {
+    color: $lt-gold;
+    cursor: pointer;
+  }
+
+  a:hover {
+    color: $lt-gold;
+    cursor: pointer;
+  }
+}
+
+.desktop-nav-container {
+  display: none;
+
+  .nav-services {
+    display: none;
+    background-color: rgba($dark, 0.9);
+    position: absolute;
+    margin-top: 0px;
+    padding-left: 0px;
+
+    li {
+      margin-top: 0px;
+      padding-top: 8px;
+      display: block;
+    }
+  }
+
+  .dropdown:hover > ul {
+    display: block;
+  }
+}
+
+.mobile-nav-items {
+  display: none;
+  width: 100vw;
+  padding-top: $nav-height;
+  font-family: 'Josefin Slab', serif;
+  font-size: 4vh;
+  margin-right: 12px;
+  padding-left: 24px;
+  margin-top: 2vh;
+  list-style-type: none;
+  z-index: 1;
+
+  position: fixed;
+  background-color: rgba($dark, 0.9);
+  color: $gold;
+
+  li {
+    border-bottom: 1px solid rgba($gold, 0.2);
+    list-style-type: none;
+  }
+
+  li:hover {
+    cursor: pointer;
+  }
+
+  ul {
+    display: none;
+    margin: 0;
+
+    li {
+      border: 0px;
+    }
+
+    a:hover {
+      color: $lt-gold;
+    }
+  }
+
+  a {
+    color: $gold;
+  }
+}
+
+.services-home {
+  position: relative;
+  height: 90vh;
+}
+
+.service {
+  height: 22.3vh;
+  width: 100vw;
+  float: left;
+  color: $gold;
+  font-family: 'Josefin Slab', serif;
+  font-size: 4vh;
+  text-align: center;
+  background-color: rgba($dark, 0.9);
+  border-bottom: 0.2vh solid rgba($gold, 0.4);
+
+  .service-title {
+    padding-top: 9.2vh;
+    margin-bottom: 0;
+  }
+
+  .service-text {
+    font-size: 3vh;
+    display: none;
+  }
+
+  &:hover {
+    background-color: rgba($dark, 0.6);
+  }
+}
+
+@media (min-width: 720px) {
+  .service {
+    height: 44.9vh;
+    background-color: rgba($dark, 0.9);
+    margin: 0;
+    width: 49.9vw;
+    float: left;
+    text-align: center;
+    color: $gold;
+    font-family: 'Josefin Slab', serif;
+    font-size: 5vh;
+
+    .service-title {
+      padding-top: 20vh;
+    }
+
+    &:hover {
+      background-color: rgba($dark, 0.6);
+    }
+  }
+
+  #tl {
+    border-right: 0.2vw solid rgba($gold, 0.4);
+    border-bottom: 0.2vh solid rgba($gold, 0.4);
+  }
+
+  #tr {
+    border-bottom: 0.2vh solid rgba($gold, 0.4);
+  }
+
+  #bl {
+    border-right: 0.2vw solid rgba($gold, 0.4);
+  }
+}
+
+@media (min-width: 580px) {
+  .desktop-nav-container {
+    display: block;
+  }
+
+  .mobile-nav-container {
+    display: none;
+  }
+}
