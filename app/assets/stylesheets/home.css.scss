@@ -9,7 +9,7 @@
 
 .home-header-container {
   position: relative;
-  background-color: rgba($gold,0.6);
+  background-color: rgba($gold,0.2);
   height: 80vh;
 }
 
@@ -35,7 +35,7 @@
 .home-filler {
   font-family: 'Josefin Slab', serif;
   color: $gold;
-  font-size: 2em;
+  font-size: 7vh;
   font-weight: 600;
   margin: 0;
   position: absolute;
@@ -60,8 +60,8 @@
     color: $gold;
     font-family: 'Josefin Slab', serif;
     font-size: 4vh;
-    float: right;
-    margin-right: 16px;
+    margin-right: 12px;
+    margin-left: 12px;
     margin-top: 2vh;
   }
 }
