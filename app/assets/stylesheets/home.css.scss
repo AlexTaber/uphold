@@ -73,6 +73,24 @@
 
 .desktop-nav-container {
   display: none;
+
+  .nav-services {
+    display: none;
+    background-color: rgba($dark, 0.9);
+    position: absolute;
+    margin-top: 0px;
+    padding-left: 0px;
+
+    li {
+      margin-top: 0px;
+      padding-top: 8px;
+      display: block;
+    }
+  }
+
+  .dropdown:hover > ul {
+    display: block;
+  }
 }
 
 .mobile-nav-items {
@@ -121,7 +139,7 @@
   }
 }
 
-@media (min-width: 620px) {
+@media (min-width: 720px) {
   .service {
     height: 44.9vh;
     background-color: rgba($dark, 0.9);
@@ -156,7 +174,7 @@
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 580px) {
   .desktop-nav-container {
     display: block;
   }

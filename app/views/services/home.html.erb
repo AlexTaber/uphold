@@ -4,9 +4,11 @@
   <!-- mobile Nav -->
   <div class="mobile-nav-container">
     <nav class="mobile-nav header-nav">
-      <li>
-        UPHOLD
-      </li>
+      <%= link_to root_path do %>
+        <li>
+          UPHOLD
+        </li>
+      <% end %>
       <li class="u-pull-right" id="mobile-nav-menu">
         <i class="fa fa-bars"></i>
       </li>
@@ -14,7 +16,7 @@
 
     <div class="mobile-nav-items">
       <li>
-        Services
+        Services <i class="fa fa-caret-down"></i>
       </li>
       <li>
         Media
@@ -31,9 +33,11 @@
   <!-- Desktop Nav -->
   <div class="desktop-nav-container">
     <nav class="desktop-nav header-nav">
-      <li>
-        UPHOLD
-      </li>
+      <%= link_to root_path do %>
+        <li>
+          UPHOLD
+        </li>
+      <% end %>
       <li class="u-pull-right">
         Contact
       </li>
@@ -43,8 +47,14 @@
       <li class="u-pull-right">
         Media
       </li>
-      <li class="u-pull-right">
-        Services
+      <li class="u-pull-right dropdown">
+        Services <i class="fa fa-caret-down"></i>
+        <ul class="nav-services">
+          <li>Uphold LIVE</li>
+          <li>Uphold Management</li>
+          <li>Uphold Agency</li>
+          <li>Uphold Venue Center</li>
+        </ul>
       </li>
     </nav>
   </div>
