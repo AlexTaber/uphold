@@ -111,6 +111,24 @@
 
   li {
     border-bottom: 1px solid rgba($gold, 0.2);
+    list-style-type: none;
+  }
+
+  li:hover {
+    cursor: pointer;
+  }
+
+  ul {
+    display: none;
+    margin: 0;
+
+    li {
+      border: 0px;
+    }
+
+    li:hover {
+      color: $lt-gold;
+    }
   }
 }
 
