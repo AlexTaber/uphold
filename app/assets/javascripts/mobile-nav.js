@@ -1,8 +1,6 @@
 $(document).ready(function() {
   $("#mobile-nav-menu").click(toggleMobileNav);
-  $(".mobile-dropdown").click(toggleDropdown).children().click(function(e) {
-    return false;
-  });;
+  $(".mobile-dropdown").click(toggleDropdown);
 });
 
 function toggleMobileNav(e) {
@@ -10,5 +8,7 @@ function toggleMobileNav(e) {
 }
 
 function toggleDropdown(e) {
-  $(".mobile-nav-services").slideToggle(200);
+  if(this == e.target) {
+    $(".mobile-nav-services").slideToggle(200);
+  }
 }

@@ -64,10 +64,19 @@
     margin-left: 12px;
     margin-top: 2vh;
 
-    &:hover {
-      color: $lt-gold;
-      cursor: pointer;
+    a {
+      color: $gold;
     }
+  }
+
+  li:hover {
+    color: $lt-gold;
+    cursor: pointer;
+  }
+
+  a:hover {
+    color: $lt-gold;
+    cursor: pointer;
   }
 }
 
@@ -126,9 +135,13 @@
       border: 0px;
     }
 
-    li:hover {
+    a:hover {
       color: $lt-gold;
     }
+  }
+
+  a {
+    color: $gold;
   }
 }
 

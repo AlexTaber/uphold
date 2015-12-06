@@ -4,11 +4,9 @@
   <!-- mobile Nav -->
   <div class="mobile-nav-container">
     <nav class="mobile-nav header-nav">
-      <%= link_to root_path do %>
-        <li>
-          UPHOLD
-        </li>
-      <% end %>
+      <li>
+        <%= link_to "UPHOLD", root_path %>
+      </li>
       <li class="u-pull-right" id="mobile-nav-menu">
         <i class="fa fa-bars"></i>
       </li>
@@ -18,20 +16,20 @@
       <li class="mobile-dropdown">
         Services <i class="fa fa-caret-down mobile-dropdown"></i>
         <ul class="mobile-nav-services">
-          <li>Uphold LIVE</li>
-          <li>Uphold Management</li>
-          <li>Uphold Agency</li>
-          <li>Uphold Venue Center</li>
+          <li><%= link_to "Uphold LIVE", live_path %></li>
+          <li><%= link_to "Uphold Management", management_path %></li>
+          <li><%= link_to "Uphold Agency", agency_path %></li>
+          <li><%= link_to "Uphold Venue Center", venue_center_path %></li>
         </ul>
       </li>
       <li>
-        Media
+        <%= link_to "Media", media_path %>
       </li>
       <li>
-        About
+        <%= link_to "About", about_path %>
       </li>
       <li>
-        Contact
+        <%= link_to "Contact", contact_path %>
       </li>
     </div>
   </div>
@@ -45,21 +43,21 @@
         </li>
       <% end %>
       <li class="u-pull-right">
-        Contact
+        <%= link_to "Contact", contact_path %>
       </li>
       <li class="u-pull-right">
-        About
+        <%= link_to "About", about_path %>
       </li>
       <li class="u-pull-right">
-        Media
+        <%= link_to "Media", media_path %>
       </li>
       <li class="u-pull-right dropdown">
         Services <i class="fa fa-caret-down"></i>
         <ul class="nav-services">
-          <li>Uphold LIVE</li>
-          <li>Uphold Management</li>
-          <li>Uphold Agency</li>
-          <li>Uphold Venue Center</li>
+          <li><%= link_to "Uphold LIVE", live_path %></li>
+          <li><%= link_to "Uphold Management", management_path %></li>
+          <li><%= link_to "Uphold Agency", agency_path %></li>
+          <li><%= link_to "Uphold Venue Center", venue_center_path %></li>
         </ul>
       </li>
     </nav>
@@ -78,8 +76,16 @@
 </div>
 
 <div class="twelve columns services-home">
-  <div class="service live" id="tl"><p>Uphold LIVE</p></div>
-  <div class="service management" id="tr"><p>Uphold Management</p></div>
-  <div class="service agency" id="bl"><p>Uphold Agency</p></div>
-  <div class="service venue-center"><p>Uphold Venue Center</p></div>
+  <%= link_to live_path do %>
+    <div class="service live" id="tl"><p>Uphold LIVE</p></div>
+  <% end %>
+  <%= link_to management_path do %>
+    <div class="service live" id="tr"><p>Uphold Management</p></div>
+  <% end %>
+  <%= link_to agency_path do %>
+    <div class="service live" id="bl"><p>Uphold Agency</p></div>
+  <% end %>
+  <%= link_to venue_center_path do %>
+    <div class="service live"><p>Uphold Venue Center</p></div>
+  <% end %>
 </div>
