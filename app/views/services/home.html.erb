@@ -1,23 +1,54 @@
 <div class="home-header-background"></div>
 
 <div class="home-header-container tab-0">
-  <nav class="header-nav">
-    <li>
-      UPHOLD
-    </li>
-    <li class="u-pull-right">
-      Contact
-    </li>
-    <li class="u-pull-right">
-      About
-    </li>
-    <li class="u-pull-right">
-      Media
-    </li>
-    <li class="u-pull-right">
-      Services
-    </li>
-  </nav>
+  <!-- mobile Nav -->
+  <div class="mobile-nav-container">
+    <nav class="mobile-nav header-nav">
+      <li>
+        UPHOLD
+      </li>
+      <li class="u-pull-right" id="mobile-nav-menu">
+        <i class="fa fa-bars"></i>
+      </li>
+    </nav>
+
+    <div class="mobile-nav-items">
+      <li>
+        Services
+      </li>
+      <li>
+        Media
+      </li>
+      <li>
+        About
+      </li>
+      <li>
+        Contact
+      </li>
+    </div>
+  </div>
+  <!--  -->
+  <!-- Desktop Nav -->
+  <div class="desktop-nav-container">
+    <nav class="desktop-nav header-nav">
+      <li>
+        UPHOLD
+      </li>
+      <li class="u-pull-right">
+        Contact
+      </li>
+      <li class="u-pull-right">
+        About
+      </li>
+      <li class="u-pull-right">
+        Media
+      </li>
+      <li class="u-pull-right">
+        Services
+      </li>
+    </nav>
+  </div>
+  <!--  -->
   <p class="twelve columns home-header">
     <%= image_tag("logo", class: "home-header-logo") %>
   </p>
