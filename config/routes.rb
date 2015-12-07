@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :events, only: [:new, :create, :destroy]
+
   root 'services#home'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
