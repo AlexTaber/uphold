@@ -30,6 +30,7 @@
   position: relative;
   background-color: $dark;
   height: 20vh;
+  border-bottom: 1px solid rgba($gold,0.5);
 }
 
 .home-filler {
@@ -54,6 +55,7 @@
   width: 100%;
   z-index: 999;
   position: fixed;
+  border-bottom: 1px solid rgba($gold,0.5);
 
   li {
     display: inline-block;

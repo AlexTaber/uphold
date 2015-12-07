@@ -12,7 +12,7 @@ function fadeInHeader() {
 function serviceEnter(e) {
   var tar = $(this).children().first();
   tar.animate({
-    'marginTop' : "-=20px"
+    'marginTop' : "-=3vh"
   }, 200);
   $(this).children(".service-text").hide().fadeIn(200);
 }
@@ -20,7 +20,7 @@ function serviceEnter(e) {
 function serviceLeave(e) {
   var tar = $(this).children().first();
   tar.animate({
-    'marginTop' : "+=20px"
+    'marginTop' : "+=3vh"
   }, 200);
   $(this).children(".service-text").show().fadeOut(200);
 };
