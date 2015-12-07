@@ -1,0 +1,21 @@
+<%= form_for band do |f| %>
+  <div>
+    <%= f.label :name  %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :bio  %>
+    <%= f.text_area :bio %>
+  </div>
+
+  <div>
+    <%= f.label :service_id %>
+    <%= f.collection_select(:service_id, Service.all, :id, :name, prompt: "No Service Provided") %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>
