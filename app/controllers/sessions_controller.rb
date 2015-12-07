@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     if current_user
-      redirect_to home_path
+      redirect_to root_path
     end
     @user = User.new
   end
