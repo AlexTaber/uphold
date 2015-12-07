@@ -1,3 +1,7 @@
+.content-container {
+  padding-top: $nav-height;
+}
+
 #flash-warn {
   margin-top: $nav-height;
   position: absolute;
@@ -6,3 +10,4 @@
   color: $gold;
   padding-right: 4px;
 }
+
