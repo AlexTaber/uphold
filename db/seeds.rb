@@ -14,3 +14,13 @@ admin = User.create(
   admin: true,
   bio: "This is the bio",
 )
+
+agency = Service.create(
+  name: "Agency",
+  description: "Band Promotion"
+)
+
+management = Service.create(
+  name: "Management",
+  description: "Band management"
+)
