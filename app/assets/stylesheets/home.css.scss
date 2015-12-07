@@ -82,6 +82,25 @@
   }
 }
 
+.admin-items {
+  display: none;
+  background-color: rgba($dark, 0.9);
+  position: absolute;
+  margin-top: 0px;
+  padding-left: 0px;
+  right: 0px;
+
+  li {
+    margin-top: 0px;
+    padding-top: 8px;
+    display: block;
+  }
+}
+
+.dropdown:hover > ul {
+  display: block;
+}
+
 .desktop-nav-container {
   display: none;
 
@@ -97,10 +116,6 @@
       padding-top: 8px;
       display: block;
     }
-  }
-
-  .dropdown:hover > ul {
-    display: block;
   }
 }
 

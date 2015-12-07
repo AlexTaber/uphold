@@ -4,6 +4,9 @@
     <li>
       <%= link_to "UPHOLD", root_path %>
     </li>
+    <% if is_admin? %>
+      <%= render partial: "layouts/admin_nav" %>
+    <% end %>
     <li class="u-pull-right" id="mobile-nav-menu">
       <i class="fa fa-bars"></i>
     </li>
@@ -39,6 +42,11 @@
         UPHOLD
       </li>
     <% end %>
+
+    <% if is_admin? %>
+      <%= render partial: "layouts/admin_nav" %>
+    <% end %>
+
     <li class="u-pull-right">
       <%= link_to "Contact", contact_path %>
     </li>
