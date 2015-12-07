@@ -11,7 +11,7 @@
 
   <div>
     <%= f.label :service_id %>
-    <%= collection_select(:service, :id, Service.all, :id, :name, {include_blank: 'No Services Provided'}) %>
+    <%= f.collection_select(:service_id, Service.all, :id, :name, prompt: "No Service Provided") %>
   </div>
 
   <div>

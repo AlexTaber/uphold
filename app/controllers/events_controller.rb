@@ -11,7 +11,7 @@ class EventsController < ApplicationController
     if @event.valid?
       @event.save
       flash[:notice] = "Event #{@event.name} successfully added"
-      redirect_to live_path
+      redirect_to admin_path
     else
       flash[:warn] = "Invalid event data, please try again"
       redirect_to :back
