@@ -10,8 +10,11 @@
 </head>
 <body>
 
+<%= render partial: "layouts/nav" %>
 <p id="flash-warn"><%= flash[:warn] %></p>
-<%= yield %>
+<div class="content-container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
