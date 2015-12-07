@@ -176,7 +176,7 @@
   font-family: 'Josefin Slab', serif;
   font-size: 4vh;
   text-align: center;
-  background-color: rgba($dark, 0.9);
+  background-color: rgba($dark, 0.85);
   border-bottom: 1px solid rgba($gold, 0.4);
 
   .service-title {
@@ -242,7 +242,7 @@
 @media (min-width: 720px) {
   .service {
     height: 36vh;
-    background-color: rgba($dark, 0.9);
+    background-color: rgba($dark, 0.85);
     margin: 0;
     width: 49.9vw;
     float: left;
@@ -272,16 +272,6 @@
   #bl {
     border-right: 1px solid rgba($gold, 0.4);
   }
-}
-
-@media (min-width: 580px) {
-  .desktop-nav-container {
-    display: block;
-  }
-
-  .mobile-nav-container {
-    display: none;
-  }
 
   .home-about {
 
@@ -291,5 +281,15 @@
       margin-bottom: 20vh;
       text-align: center;
     }
+  }
+}
+
+@media (min-width: 580px) {
+  .desktop-nav-container {
+    display: block;
+  }
+
+  .mobile-nav-container {
+    display: none;
   }
 }
