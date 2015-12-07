@@ -5,12 +5,13 @@
   background:url("concert");
   background-size:cover;
   position: fixed;
+  z-index: -1;
 }
 
 .home-header-container {
   position: relative;
   background-color: rgba($gold,0.2);
-  height: 70vh;
+  height: 72vh;
 }
 
 .home-header {
@@ -19,7 +20,7 @@
   color: #FFCC00;
   font-size: 4em;
   text-align: center;
-  top: 8vh;
+  top: 10vh;
 
   img {
     height: 55vh;
@@ -29,7 +30,7 @@
 .home-filler-container {
   position: relative;
   background-color: $dark;
-  height: 20vh;
+  height: 18vh;
   border-bottom: 1px solid rgba($gold,0.5);
 }
 
@@ -164,11 +165,11 @@
 
 .services-home {
   position: relative;
-  height: 90vh;
+  height: 72vh;
 }
 
 .service {
-  height: 22.3vh;
+  height: 17.9vh;
   width: 100vw;
   float: left;
   color: $gold;
@@ -176,10 +177,10 @@
   font-size: 4vh;
   text-align: center;
   background-color: rgba($dark, 0.9);
-  border-bottom: 0.2vh solid rgba($gold, 0.4);
+  border-bottom: 1px solid rgba($gold, 0.4);
 
   .service-title {
-    padding-top: 9.2vh;
+    padding-top: 6.9vh;
     margin-bottom: 0;
   }
 
@@ -193,9 +194,51 @@
   }
 }
 
+.services-filler-container {
+  height: 18vh;
+  background-color: rgba($dark, 1);
+  position: relative;
+  border-top: 1px solid rgba($gold, 0.4);
+
+  p {
+    font-family: 'Josefin Slab', serif;
+    color: $gold;
+    font-size: 7vh;
+    font-weight: 600;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+.home-about {
+  background-color: rgba($dark, 0.6);
+
+  p {
+    font-size: 4vh;
+    font-family: 'Josefin Slab', serif;
+    color: $lt-gold;
+    margin-left: 6vw;
+    margin-right: 6vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 88vw;
+  }
+
+  i {
+    display: none;
+  }
+}
+
 @media (min-width: 720px) {
   .service {
-    height: 44.9vh;
+    height: 36vh;
     background-color: rgba($dark, 0.9);
     margin: 0;
     width: 49.9vw;
@@ -206,7 +249,7 @@
     font-size: 5vh;
 
     .service-title {
-      padding-top: 20vh;
+      padding-top: 15.5vh;
     }
 
     &:hover {
@@ -215,16 +258,16 @@
   }
 
   #tl {
-    border-right: 0.2vw solid rgba($gold, 0.4);
-    border-bottom: 0.2vh solid rgba($gold, 0.4);
+    border-right: 1px solid rgba($gold, 0.4);
+    border-bottom: 1px solid rgba($gold, 0.4);
   }
 
   #tr {
-    border-bottom: 0.2vh solid rgba($gold, 0.4);
+    border-bottom: 1px solid rgba($gold, 0.4);
   }
 
   #bl {
-    border-right: 0.2vw solid rgba($gold, 0.4);
+    border-right: 1px solid rgba($gold, 0.4);
   }
 }
 
@@ -235,5 +278,22 @@
 
   .mobile-nav-container {
     display: none;
+  }
+
+  .home-about {
+    padding-top: 10vh;
+
+    p {
+      width: 50vw;
+      margin-top: 25vh;
+      margin-bottom: 25vh;
+      text-align: center;
+    }
+
+    i {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+    }
   }
 }
