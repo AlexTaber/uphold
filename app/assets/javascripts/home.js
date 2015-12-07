@@ -1,11 +1,14 @@
+var fadeInAboutsIndex = 0;
+var scrollPosition = 0;
+
 $(document).ready(function() {
   fadeInHeader();
   $(".service").on("mouseenter", serviceEnter);
   $(".service").on("mouseleave", serviceLeave);
 
-  fadeInAboutsIndex = 0;
   $(".home-about").children("p").css({ opacity: 0 });
-  $(window).scroll(fadeInAbouts)
+  window.onscroll = checkScroll;
+  setInterval(checkScroll, 400);
 });
 
 function fadeInHeader() {
@@ -43,5 +46,15 @@ function fadeInAbouts() {
       }, 1200);
       fadeInAboutsIndex += 1;
     }
+  }
+}
+
+function didScroll() {
+  return scrollPosition != $(window).scrollTop();
+}
+
+function checkScroll() {
+  if(didScroll) {
+      fadeInAbouts();
   }
 }
