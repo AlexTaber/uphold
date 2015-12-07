@@ -219,6 +219,7 @@
 
 .home-about {
   background-color: rgba($dark, 0.6);
+  padding-top: 10vh;
 
   p {
     font-size: 4vh;
@@ -226,13 +227,15 @@
     color: $lt-gold;
     margin-left: 6vw;
     margin-right: 6vw;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
     width: 88vw;
   }
 
   i {
-    display: none;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
   }
 }
 
@@ -281,19 +284,12 @@
   }
 
   .home-about {
-    padding-top: 10vh;
 
     p {
       width: 50vw;
-      margin-top: 25vh;
-      margin-bottom: 25vh;
+      margin-top: 20vh;
+      margin-bottom: 20vh;
       text-align: center;
-    }
-
-    i {
-      display: block;
-      text-align: center;
-      margin-top: 20px;
     }
   }
 }
