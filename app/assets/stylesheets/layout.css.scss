@@ -1,4 +1,8 @@
 #flash-warn {
   margin-top: $nav-height;
   position: absolute;
+  z-index: 999;
+  background-color: $dark;
+  color: $gold;
+  padding-right: 4px;
 }

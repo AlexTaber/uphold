@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/management' => 'services#management'
   get '/agency' => 'services#agency'
   get '/venue-center' => 'venues#home'
+  get '/admin' => 'users#admin'
 end
