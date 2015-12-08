@@ -8,4 +8,12 @@ class Event < ActiveRecord::Base
   has_many :sounds, as: :soundable
   has_many :links, as: :linkable
   has_many :sales
+
+  def bookings_by_rank
+    bookings.order(:rank)
+  end
+
+  def reset_bookings_order
+    bookings_by_rank.each_with_index { |booking, index| booking.update_attribute(:rank, index) }
+  end
 end

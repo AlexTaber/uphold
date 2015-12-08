@@ -55,12 +55,14 @@ ActiveRecord::Schema.define(version: 20151208003433) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "name",        null: false
-    t.text     "description", null: false
-    t.datetime "start_time",  null: false
-    t.datetime "end_time",    null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "name",                             null: false
+    t.text     "description",                      null: false
+    t.datetime "start_time",                       null: false
+    t.datetime "end_time",                         null: false
+    t.integer  "total_headliners", default: 1,     null: false
+    t.boolean  "live",             default: false, null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "images", force: :cascade do |t|

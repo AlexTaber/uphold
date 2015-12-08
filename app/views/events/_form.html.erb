@@ -20,6 +20,11 @@
   </div>
 
   <div>
+    <%= f.label :total_headliners, "Number of Headliners"  %>
+    <%= f.number_field :total_headliners, min: 1 %>
+  </div>
+
+  <div>
     <%= f.submit %>
   </div>
 

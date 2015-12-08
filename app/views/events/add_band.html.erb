@@ -1,8 +1,8 @@
 <div>
   <h4>Bands already added for <%= @event.name %> </h4>
-  <% @event.bookings.each do |booking| %>
+  <% @event.bookings.each_with_index do |booking, index| %>
     <div>
-      <%= booking.band.name %> <%= link_to "Remove", booking_path(booking), method: "DELETE" %>
+      <%= "#{index + 1}) #{booking.band.name} #{booking.headliner_text}" %> <%= link_to "Remove", booking_path(booking), method: "DELETE" %>
     </div>
   <% end %>
 </div>

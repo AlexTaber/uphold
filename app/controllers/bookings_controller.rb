@@ -20,7 +20,9 @@ class BookingsController < ApplicationController
 
   def destroy
     if @booking
+      @event = @booking.event
       @booking.delete
+      @event.reset_bookings_order
       flash[:notice] = "Band removed from event"
     else
       flash[:warn] = "Unable to remove band from event, please try again"
