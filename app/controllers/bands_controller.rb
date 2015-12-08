@@ -1,4 +1,5 @@
 class BandsController < ApplicationController
+  before_action :find_by_id, only: [:destroy, :show]
   before_action :require_admin, except: [:show]
 
   def new
@@ -22,9 +23,15 @@ class BandsController < ApplicationController
   end
 
   def destroy
+    flash[:warn] = "Unable to delete event, please try again" unless @band.delete
+    redirect_to :back
   end
 
   private
+
+  def find_by_id
+    @band = Band.find_by(id: params[:id])
+  end
 
   def band_params
     params.require(:band).permit(:name, :bio, :service_id)

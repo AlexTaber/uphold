@@ -1,0 +1,22 @@
+<div>
+  <h4>Bands already added for <%= @event.name %> </h4>
+  <% @event.bands.each do |band| %>
+    <div>
+      <%= band.name %> <%= link_to "Remove", event_path(@event,event: { remove_band_id: band.id }), method: "PUT" %>
+    </div>
+  <% end %>
+</div>
+
+
+<div>
+  <%= form_for @event do |f| %>
+    <div>
+      <%= label_tag :band_ids, "Add New Band" %>
+      <%= collection_select(:event, :band_ids, Band.all, :id, :name, prompt: true) %>
+    </div>
+
+    <div>
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

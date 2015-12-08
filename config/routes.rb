@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :events, only: [:new, :create, :destroy]
+  resources :events, only: [:show, :update, :new, :create, :destroy] do
+    member do
+      get 'add_band'
+    end
+  end
   resources :bands, only: [:new, :create, :show, :destroy]
   resources :musicians, except: [:index]
 

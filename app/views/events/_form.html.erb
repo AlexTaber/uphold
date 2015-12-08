@@ -20,11 +20,6 @@
   </div>
 
   <div>
-    <%= f.label :band_ids, "Bands" %>
-    <%= f.collection_select(:band_ids, Band.all, :id, :name, {}, {multiple: true, "style" => "height:200px"}) %>
-  </div>
-
-  <div>
     <%= f.submit %>
   </div>
 
