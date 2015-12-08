@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     member do
       get 'add_band'
     end
-    get 'pending'
   end
   resources :bands, only: [:new, :create, :show, :destroy]
   resources :musicians, except: [:index]
@@ -22,4 +21,5 @@ Rails.application.routes.draw do
   get '/agency' => 'services#agency'
   get '/venue-center' => 'venues#home'
   get '/admin' => 'users#admin'
+  get '/pending' => 'events#pending'
 end
