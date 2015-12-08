@@ -20,8 +20,9 @@
   </div>
 
   <div>
-    <%= f.label :band_id %>
-    <%= f.collection_select(:band_id, Band.all, :id, :name, prompt: "Currently Not a Band Member") %>
+    <%= f.label :band_ids %>
+    <%= f.collection_select(:band_ids, Band.all, :id, :name,{}, {:multiple => true}) %>
+
   </div>
 
   <div>
