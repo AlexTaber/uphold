@@ -32,13 +32,6 @@ ActiveRecord::Schema.define(version: 20151208003433) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "bands_events", force: :cascade do |t|
-    t.integer  "band_id",    null: false
-    t.integer  "event_id",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "bands_users", force: :cascade do |t|
     t.integer  "band_id",    null: false
     t.integer  "user_id",    null: false
@@ -49,6 +42,14 @@ ActiveRecord::Schema.define(version: 20151208003433) do
   create_table "bands_venues", force: :cascade do |t|
     t.integer  "band_id",    null: false
     t.integer  "venue_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "band_id",    null: false
+    t.integer  "event_id",   null: false
+    t.integer  "rank",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

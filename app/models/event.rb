@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
-  has_and_belongs_to_many :bands
+  has_many :bookings
+  has_many :bands, through: :bookings
   has_and_belongs_to_many :events
   belongs_to :venue
   has_many :videos, as: :videoable

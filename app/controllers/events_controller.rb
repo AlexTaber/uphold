@@ -20,9 +20,6 @@ class EventsController < ApplicationController
   end
 
   def update
-    set_up_band if params[:event][:band_ids]
-    remove_band if params[:event][:remove_band_id]
-    redirect_to :back
   end
 
   def destroy
@@ -30,6 +27,7 @@ class EventsController < ApplicationController
   end
 
   def add_band
+    @booking = Booking.new
   end
 
   private
@@ -40,15 +38,5 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:name, :description, :start_time, :end_time)
-  end
-
-  def set_up_band
-    band = Band.find_by(id: params[:event][:band_ids])
-    band ? @event.bands << band : flash[:warn] = "There was a problem saving band submissions. Please check event page and update if needed"
-  end
-
-  def remove_band
-    band = Band.find_by(id: params[:event][:remove_band_id])
-    @event.bands.delete(band) if band
   end
 end

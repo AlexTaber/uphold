@@ -1,19 +1,22 @@
 <div>
   <h4>Bands already added for <%= @event.name %> </h4>
-  <% @event.bands.each do |band| %>
+  <% @event.bookings.each do |booking| %>
     <div>
-      <%= band.name %> <%= link_to "Remove", event_path(@event,event: { remove_band_id: band.id }), method: "PUT" %>
+      <%= booking.band.name %> <%= link_to "Remove", booking_path(booking), method: "DELETE" %>
     </div>
   <% end %>
 </div>
 
 
 <div>
-  <%= form_for @event do |f| %>
+  <%= form_for @booking do |f| %>
     <div>
-      <%= label_tag :band_ids, "Add New Band" %>
-      <%= collection_select(:event, :band_ids, Band.all, :id, :name, prompt: true) %>
+      <%= label_tag :band_id, "Add New Band" %>
+      <%= collection_select(:booking, :band_id, Band.all, :id, :name, prompt: true) %>
     </div>
+
+    <%= f.hidden_field :event_id, value: @event.id %>
+    <%= f.hidden_field :rank, value: @event.bookings.count %>
 
     <div>
       <%= f.submit %>
