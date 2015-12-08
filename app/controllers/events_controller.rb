@@ -39,6 +39,15 @@ class EventsController < ApplicationController
   end
 
   def update
+    @event.assign_attributes(event_params)
+    if @event.valid?
+      @event.save
+      flash[:notice] = "Event #{@event.name} has been successfully posted"
+      redirect_to live_path
+    else
+      flash[:warn] = "Unable to save event, please try again"
+      redirect_to :back
+    end
   end
 
   def destroy
@@ -49,6 +58,10 @@ class EventsController < ApplicationController
     @booking = Booking.new
   end
 
+  def pending
+    @events = Event.where(live: false)
+  end
+
   private
 
   def event_by_id
@@ -56,6 +69,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :description, :start_time, :end_time, :total_headliners)
+    params.require(:event).permit(:name, :description, :start_time, :end_time, :total_headliners, :live)
   end
 end

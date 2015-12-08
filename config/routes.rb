@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     member do
       get 'add_band'
     end
+    get 'pending'
   end
   resources :bands, only: [:new, :create, :show, :destroy]
   resources :musicians, except: [:index]
