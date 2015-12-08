@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :events, only: [:new, :create, :destroy]
   resources :bands, only: [:new, :create, :show, :destroy]
+  resources :bands, except: [:index]
 
   root 'services#home'
   get '/login' => 'sessions#new'
