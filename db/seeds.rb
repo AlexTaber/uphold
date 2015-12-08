@@ -27,8 +27,14 @@ management = Service.create(
 
 15.times do |x|
   band = Band.create(
-    name: Faker::Lorem.word.capitalize,
-    bio: Faker::Lorem.paragraph(3) + "\r\n\r\n" + Faker::Lorem.paragraph(2)
+    name: Faker::App.name,
+    bio: Faker::Hipster.paragraph(3) + "\r\n\r\n" + Faker::Hipster.paragraph(2)
+  )
+
+  band_image = Image.create(
+    url: "http://p4cdn4static.sharpschool.com/UserFiles/Servers/Server_91869/Image/Band4.jpg",
+    imageable_id: band.id,
+    imageable_type: "Band"
   )
 end
 
@@ -41,6 +47,48 @@ end
   musician = Musician.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    bio: Faker::Lorem.paragraph(3) + "\r\n\r\n" + Faker::Lorem.paragraph(2)
+    bio: Faker::Hipster.paragraph(3) + "\r\n\r\n" + Faker::Hipster.paragraph(2),
+    instruments: Faker::Hipster.word.capitalize
   )
+
+  musician_image = Image.create(
+    url: Faker::Avatar.image,
+    imageable_id: musician.id,
+    imageable_type: "Musician"
+  )
+
+  band_member = BandMember.create(
+    musician_id: musician.id,
+    band_id: rand[1..15]
+  )
+end
+
+10.times do |x|
+  random_time = Faker::Time.between(DateTime.now - 30, DateTime.now + 100)
+
+  event = Event.create(
+    name: Faker::Hipster.sentence(3),
+    description: Faker::Hipster.paragraph(3) + "\r\n\r\n" + Faker::Hipster.paragraph(2),
+    total_headliners: 1,
+    live: x < 8,
+    start_time: random_time,
+    end_time: random_time + 3.hours
+  )
+
+  rand[3..8].times do |x|
+    randomized_bands = Band.all.order("RANDOM()")
+
+    booking = Booking.create(
+      band_id: randomized_bands[x],
+      event_id: event.id,
+      rank: x
+    )
+  end
+
+  event_image = Image.create(
+    url: Faker::Placeholdit.image("800x500", 'jpg', 'ffffff', '000', 'Placehold Event Image'),
+    imageable_id: event.id,
+    imageable_type: "Event"
+  )
+
 end
