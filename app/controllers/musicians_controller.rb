@@ -10,6 +10,7 @@ class MusiciansController < ApplicationController
 
     if @musician.valid?
       @musician.save
+      set_up_bands if params[:musician][:band_ids]
 
       unless params[:musician][:file]
         #placeholder image
@@ -42,6 +43,16 @@ class MusiciansController < ApplicationController
   private
 
   def musician_params
-    params.require(:musician).permit(:first_name, :last_name, :bio, :instruments, :band_id)
+    params.require(:musician).permit(:first_name, :last_name, :bio, :instruments)
+  end
+
+  def set_up_bands
+    band_ids = params[:musician][:band_ids].reject!(&:empty?)
+    band_ids.each do |band_id|
+      BandMember.create(
+        band_id: band_id,
+        musician_id: @musician.id
+      )
+    end
   end
 end
