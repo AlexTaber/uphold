@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :event_by_id, only: [:add_band, :update, :destroy]
+  before_action :event_by_id, only: [:show, :add_band, :edit, :update, :destroy]
   before_action :require_admin
 
   def new
@@ -36,6 +36,12 @@ class EventsController < ApplicationController
       flash[:warn] = "Invalid event data, please try again"
       redirect_to :back
     end
+  end
+
+  def show
+  end
+
+  def edit
   end
 
   def update

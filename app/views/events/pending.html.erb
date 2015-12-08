@@ -1,5 +1,9 @@
 <% @events.each do |event| %>
   <div>
-    <%= event.name %> <%= link_to "Add Bands", add_band_event_path(event) %>
+    <%= event.name %>
+    <p>
+      <%= link_to "Edit Event", edit_event_path(event) %> |
+      <%= link_to "Add Bands", add_band_event_path(event) %>
+    </p>
   </div>
 <% end %>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :events, only: [:show, :update, :new, :create, :destroy] do
+  resources :events, except: [:index] do
     member do
       get 'add_band'
     end
