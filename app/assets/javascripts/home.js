@@ -42,7 +42,7 @@ function fadeInAbouts() {
       console.log("HERE");
       child.animate({
         opacity: 1,
-        'marginTop' : "-=14vh"
+        'marginTop' : "-=12vh"
       }, 1200);
       fadeInAboutsIndex += 1;
     }
