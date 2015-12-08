@@ -10,6 +10,15 @@ class MusiciansController < ApplicationController
 
     if @musician.valid?
       @musician.save
+
+      unless params[:musician][:file]
+        #placeholder image
+          @image = Image.create(url: "http://torrancecrossfit.com/wp-content/uploads/2014/06/jlnovotngmail-com.jpeg", imageable_id: @musician.id, imageable_type: "Musician")
+        #----
+      else
+        upload_image(params[:musician][:file], @musician)
+      end
+
       flash[:notice] = "Musician #{@musician.name} successfully added"
       redirect_to admin_path
     else
