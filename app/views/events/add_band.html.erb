@@ -1,0 +1,25 @@
+<div>
+  <h4>Bands already added for <%= @event.name %> </h4>
+  <% @event.bookings.each_with_index do |booking, index| %>
+    <div>
+      <%= "#{index + 1}) #{booking.band.name} #{booking.headliner_text}" %> <%= link_to "Remove", booking_path(booking), method: "DELETE" %>
+    </div>
+  <% end %>
+</div>
+
+
+<div>
+  <%= form_for @booking do |f| %>
+    <div>
+      <%= label_tag :band_id, "Add New Band" %>
+      <%= collection_select(:booking, :band_id, Band.all, :id, :name, prompt: true) %>
+    </div>
+
+    <%= f.hidden_field :event_id, value: @event.id %>
+    <%= f.hidden_field :rank, value: @event.bookings.count %>
+
+    <div>
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
