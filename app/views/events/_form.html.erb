@@ -25,6 +25,11 @@
   </div>
 
   <div>
+    <%= label_tag :image, "Upload an Image" %>
+    <%= f.file_field :file, multiple: true  %>
+  </div>
+
+  <div>
     <%= f.submit %>
   </div>
 

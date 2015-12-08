@@ -36,7 +36,7 @@ function fadeInAbouts() {
   var children = $(".home-about").children("p");
   for(var i = fadeInAboutsIndex; i < children.length; i++) {
     var child = $(children[i]);
-    var targetOffset = $(window).height() * 0.75;
+    var targetOffset = $(window).height() * 0.65;
     var target = child.position().top - targetOffset;
     if($(window).scrollTop() > target) {
       console.log("HERE");
