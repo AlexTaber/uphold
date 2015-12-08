@@ -4,6 +4,7 @@ class CreateMusicians < ActiveRecord::Migration
       t.string  :first_name, null: false
       t.string  :last_name, null: false
       t.text    :bio
+      t.string  :instruments
       t.integer :band_id
 
       t.timestamps null: false

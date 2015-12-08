@@ -1,0 +1,31 @@
+<%= form_for musician do |f| %>
+  <div>
+    <%= f.label :first_name  %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= f.label :last_name  %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= f.label :bio  %>
+    <%= f.text_area :bio %>
+  </div>
+
+  <div>
+    <%= f.label :instruments, "Instrument(s)" %>
+    <%= f.text_field :instruments %>
+  </div>
+
+  <div>
+    <%= f.label :band_id %>
+    <%= f.collection_select(:band_id, Band.all, :id, :name, prompt: "Currently Not a Band Member") %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>
