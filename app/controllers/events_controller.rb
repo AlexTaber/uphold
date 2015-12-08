@@ -57,7 +57,14 @@ class EventsController < ApplicationController
   end
 
   def destroy
-
+    if @event
+      @event.delete
+      flash[:notice] = "Event successfully removed"
+      redirect_to pending_path
+    else
+      flash[:warn] = "Unable to remove event, please try again"
+      redirect_to :back
+    end
   end
 
   def add_band
@@ -65,7 +72,7 @@ class EventsController < ApplicationController
   end
 
   def pending
-    @events = Event.where(live: false)
+    @events = Event.pending
   end
 
   private
