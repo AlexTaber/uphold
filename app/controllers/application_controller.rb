@@ -27,18 +27,27 @@ class ApplicationController < ActionController::Base
     current_user && current_user.admin
   end
 
-  def parse_datetime_params params, label, utc_or_local = :local
-    begin
-      year   = params[(label.to_s + '(1i)').to_sym].to_i
-      month  = params[(label.to_s + '(2i)').to_sym].to_i
-      mday   = params[(label.to_s + '(3i)').to_sym].to_i
-      hour   = (params[(label.to_s + '(4i)').to_sym] || 0).to_i
-      minute = (params[(label.to_s + '(5i)').to_sym] || 0).to_i
-      second = (params[(label.to_s + '(6i)').to_sym] || 0).to_i
+  def upload_images(item, default_url, params)
+    unless params[item.class.name.downcase.to_sym][:file]
+      #placeholder image
+        @image = Image.create(url: default_url, imageable_id: item.id, imageable_type: item.class.to_s)
+      #----
+    else
+      params[item.class.name.downcase.to_sym][:file].each do |file|
+        upload_image(file, item)
+      end
+    end
+  end
 
-      return DateTime.civil_from_format(utc_or_local,year,month,mday,hour,minute,second)
-    rescue => e
-      return nil
+  def upload_image(file, item)
+    obj = S3_BUCKET.object(file.original_filename)
+
+    obj.upload_file(file.tempfile, acl:'public-read')
+
+    @image = Image.new(url: obj.public_url, imageable_id: item.id, imageable_type: item.class.to_s)
+
+    unless @image.save
+      flash[:warn] = "There was a problem uploading your image(s), please try again"
     end
   end
 end

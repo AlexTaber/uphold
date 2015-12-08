@@ -11,6 +11,9 @@ class BandsController < ApplicationController
 
     if @band.valid?
       @band.save
+
+      upload_images(@band, "http://p4cdn4static.sharpschool.com/UserFiles/Servers/Server_91869/Image/Band4.jpg", params)
+
       flash[:notice] = "Band #{@band.name} successfully added"
       redirect_to admin_path
     else

@@ -12,23 +12,7 @@ class EventsController < ApplicationController
     if @event.valid?
       @event.save
 
-      unless params[:event][:file]
-        #placeholder image - will erase this block
-          @image = Image.create(url: "http://www.connexionsweb.com/wp-content/uploads/2015/03/businessLogo.png", imageable_id: @event.id, imageable_type: "Event")
-        #----
-      else
-        params[:event][:file].each do |file|
-          obj = S3_BUCKET.object(file.original_filename)
-
-          obj.upload_file(file.tempfile, acl:'public-read')
-
-          @image = Image.new(url: obj.public_url, imageable_id: @event.id, imageable_type: "Event")
-
-          unless @image.save
-            flash[:warn] = "There was a problem uploading your image(s), please try again"
-          end
-        end
-      end
+      upload_images(@event, "http://www.connexionsweb.com/wp-content/uploads/2015/03/businessLogo.png", params)
 
       flash[:notice] = "Event #{@event.name} successfully added"
       redirect_to add_band_event_path(@event)
