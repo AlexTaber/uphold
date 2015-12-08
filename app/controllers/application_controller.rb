@@ -28,12 +28,12 @@ class ApplicationController < ActionController::Base
   end
 
   def upload_images(item, default_url, params)
-    unless params[:event][:file]
+    unless params[item.class.name.downcase.to_sym][:file]
       #placeholder image
         @image = Image.create(url: default_url, imageable_id: item.id, imageable_type: item.class.to_s)
       #----
     else
-      params[:event][:file].each do |file|
+      params[item.class.name.downcase.to_sym][:file].each do |file|
         upload_image(file, item)
       end
     end
