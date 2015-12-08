@@ -31,7 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry-rails'
 gem 'aws-sdk', '~> 2'
 gem 'envyable'
-gem 'faker'
+gem 'faker', github: 'stympy/faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

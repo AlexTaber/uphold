@@ -39,8 +39,8 @@ management = Service.create(
 end
 
 5.times do |x|
-  agency.bands << Band.find(x)
-  management.bands << Band.find(x + 5)
+  agency.bands << Band.find(x + 1)
+  management.bands << Band.find(x + 6)
 end
 
 50.times do |x|
@@ -59,7 +59,7 @@ end
 
   band_member = BandMember.create(
     musician_id: musician.id,
-    band_id: rand[1..15]
+    band_id: rand(1..15)
   )
 end
 
@@ -75,11 +75,11 @@ end
     end_time: random_time + 3.hours
   )
 
-  rand[3..8].times do |x|
-    randomized_bands = Band.all.order("RANDOM()")
+  randomized_bands = Band.all.order("RANDOM()")
 
+  rand(3..8).times do |x|
     booking = Booking.create(
-      band_id: randomized_bands[x],
+      band_id: randomized_bands[x].id,
       event_id: event.id,
       rank: x
     )
