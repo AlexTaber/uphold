@@ -2,6 +2,7 @@ class MusiciansController < ApplicationController
   before_action :require_admin, except: [:show]
 
   def new
+    @musician = Musician.new
   end
 
   def create
