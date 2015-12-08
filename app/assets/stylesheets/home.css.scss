@@ -2,7 +2,7 @@
   float:left;
   width:100vw;;
   height:100vh;
-  background:url("concert");
+  background:url("show");
   background-size:cover;
   position: fixed;
   z-index: -1;
@@ -236,6 +236,24 @@
     display: block;
     text-align: center;
     margin-top: 20px;
+  }
+}
+
+.social-icons {
+  width: 100vw;
+  height: 16vh;
+  background-color: rgba($dark, 1);
+  text-align: center;
+
+  i {
+    font-size: 8vh;
+    margin-top: 4vh;
+    margin-left: 1vw;
+    color: $gold;
+  }
+
+  i:hover {
+    color: $lt-gold;
   }
 }
 
