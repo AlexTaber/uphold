@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :event_by_id, only: [:add_band, :update, :destroy]
+  before_action :event_by_id, only: [:show, :add_band, :edit, :update, :destroy]
   before_action :require_admin
 
   def new
@@ -38,15 +38,41 @@ class EventsController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
   def update
+    @event.assign_attributes(event_params)
+    if @event.valid?
+      @event.save
+      flash[:notice] = "Event #{@event.name} has been successfully posted"
+      redirect_to live_path
+    else
+      flash[:warn] = "Unable to save event, please try again"
+      redirect_to :back
+    end
   end
 
   def destroy
-
+    if @event
+      @event.delete
+      flash[:notice] = "Event successfully removed"
+      redirect_to pending_path
+    else
+      flash[:warn] = "Unable to remove event, please try again"
+      redirect_to :back
+    end
   end
 
   def add_band
     @booking = Booking.new
+  end
+
+  def pending
+    @events = Event.pending
   end
 
   private
@@ -56,6 +82,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :description, :start_time, :end_time, :total_headliners)
+    params.require(:event).permit(:name, :description, :start_time, :end_time, :total_headliners, :live)
   end
 end

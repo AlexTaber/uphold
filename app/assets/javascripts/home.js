@@ -43,7 +43,7 @@ function fadeInAbouts() {
       child.animate({
         opacity: 1,
         'marginTop' : "-=12vh"
-      }, 1200);
+      }, 1000);
       fadeInAboutsIndex += 1;
     }
   }

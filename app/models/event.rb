@@ -9,6 +9,10 @@ class Event < ActiveRecord::Base
   has_many :links, as: :linkable
   has_many :sales
 
+  def self.pending
+    self.where(live: false)
+  end
+
   def bookings_by_rank
     bookings.order(:rank)
   end

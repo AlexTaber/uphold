@@ -19,7 +19,18 @@
     <%= f.hidden_field :rank, value: @event.bookings.count %>
 
     <div>
-      <%= f.submit %>
+      <%= f.submit "Add Band" %>
+    </div>
+  <% end %>
+</div>
+
+<div>
+  <%= form_for @event do |f| %>
+
+    <%= f.hidden_field :live, value: true %>
+
+    <div>
+      <%= f.submit "Post Event" %>
     </div>
   <% end %>
 </div>

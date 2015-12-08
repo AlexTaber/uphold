@@ -1,0 +1,10 @@
+<% @events.each do |event| %>
+  <div>
+    <%= event.name %>
+    <p>
+      <%= link_to "Edit Event", edit_event_path(event) %> |
+      <%= link_to "Add Bands", add_band_event_path(event) %> |
+      <%= link_to "Delete Event", event_path(event), method: "DELETE" %>
+    </p>
+  </div>
+<% end %>
