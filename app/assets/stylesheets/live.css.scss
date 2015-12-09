@@ -26,9 +26,13 @@
     margin-left: 10vw;
     width: 80vw;
     font-size: 4vh;
-    color: $lt-gold;
+    color: $gold;
     text-align: center;
-    margin-top: 2vh;
+    padding-top: 4vh;
+  }
+
+  .live-header-content:hover {
+    color: $lt-gold;
   }
 }
 
@@ -36,13 +40,16 @@
   width: 6vw;
   font-size: 4vh;
   color: $gold;
-  margin-top: 33vh;
+  margin-top: 31vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
   position: fixed;
   padding-left: 4vw;
 }
 
 .live-arrow:hover {
   color: $lt-gold;
+  cursor: pointer;
 }
 
 #carousel-right {
@@ -59,6 +66,10 @@
 
   i {
     margin-left: 1vw;
+  }
+
+  i:hover {
+    cursor: pointer;
   }
 }
 

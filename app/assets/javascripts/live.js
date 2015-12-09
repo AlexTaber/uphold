@@ -4,6 +4,8 @@ $(document).ready(function() {
   $("#carousel-left").click(scrollLeft);
   $("#carousel-right").click(scrollRight);
   $("#carousel-left").hide();
+
+  $(".fa-circle").click(dotScroll);
   updateDotColor();
 });
 
@@ -25,7 +27,7 @@ function scrollRight() {
 
     $(".live-header-container").animate({
       "marginLeft": "-=100vw"
-    }, 600);
+    }, 680);
 
     postScroll();
   }
@@ -39,8 +41,10 @@ function subtractScrollIndex() {
 function postScroll() {
   if(scrollIndex == 0) {
     $("#carousel-left").fadeOut(200);
+    $("#carousel-right").fadeIn(200);
   } else if(scrollIndex == 2) {
     $("#carousel-right").fadeOut(200);
+    $("#carousel-left").fadeIn(200);
   } else {
     $("#carousel-left").fadeIn(200);
     $("#carousel-right").fadeIn(200);
@@ -61,4 +65,19 @@ function updateDotColor() {
       curDot.css("color", "#d5cea9");
     }
   }
+}
+
+function dotScroll(e) {
+  var dot = $(e.target);
+  var id = dot.attr('id');
+  var index = id[id.length - 1];
+  var scrollAmount = String((scrollIndex - index) * 100) + "vw";
+  console.log(scrollAmount);
+
+  $(".live-header-container").animate({
+    "marginLeft": "+=" + scrollAmount
+  }, 680);
+
+  scrollIndex = index;
+  postScroll();
 }
