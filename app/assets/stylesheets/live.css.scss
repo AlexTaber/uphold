@@ -1,5 +1,5 @@
 .live-header-container {
-  overflow-x: scroll;
+  overflow-x: hidden;
   width: auto;
   white-space: nowrap;
   font-size: 0;
@@ -25,7 +25,11 @@
     font-size: 4vh;
     color: $gold;
     padding-left: 4vw;
-    padding-top: 33vh;
+    margin-top: 33vh;
+  }
+
+  .live-arrow:hover {
+    background-color: rgba(white, 0.1);
   }
 
   .live-header-content {
@@ -40,6 +44,7 @@
 .live-filler-container {
   height: 20vh;
   background-color: $dark;
+  border-bottom: 1px solid $gold;
 
   p {
     font-family: 'Josefin Slab', serif;
