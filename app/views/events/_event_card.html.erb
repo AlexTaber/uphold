@@ -1,0 +1,21 @@
+<%= link_to event_path(event) do %>
+  <div class="event-card-container">
+    <div class="event-card-background" style="background: url('<%= event.images.first.url %>'); background-size:cover;">
+      <div class="ec-top-container">
+        <h6><%= event.start_date_to_s %> </h6>
+        <% event.headliners.each do |headliner| %>
+          <h5><%= headliner.band.name %></h5>
+        <% end %>
+        <% event.openers[0..1].each do |opener| %>
+          <h6><%= opener.band.name %></h6>
+        <% end %>
+        <% if event.openers.count > 2 %>
+          <h6>And <%= event.openers.count - 2 %> Others</h6>
+        <% end %>
+      </div>
+    </div>
+    <div class="ec-bottom-container">
+
+    </div>
+  </div>
+<% end %>

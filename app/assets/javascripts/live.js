@@ -54,6 +54,9 @@ function postScroll() {
   }
 
   updateDotColor();
+
+  $("#live-header-content-" + String(scrollIndex)).hide();
+  $("#live-header-content-" + String(scrollIndex)).fadeIn(2000);
 }
 
 function updateDotColor() {

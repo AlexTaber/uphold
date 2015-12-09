@@ -34,13 +34,21 @@ class Event < ActiveRecord::Base
   end
 
   def active
-    live && start_time > DateTime.now
+    live && start_time > DateTime.now - 5.hours
+  end
+
+  def events_to_s(events)
+    str = ""
+    events.each { |headliner| str += "#{headliner.band.name} | " }
+    str[0..-3]
   end
 
   def headliners_to_s
-    str = ""
-    headliners.each { |headliner| str += "#{headliner.band.name} | " }
-    str[0..-3]
+    events_to_s(headliners)
+  end
+
+  def openers_to_s
+    events_to_s(openers)
   end
 
   def start_date_to_s

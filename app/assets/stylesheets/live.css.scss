@@ -26,13 +26,13 @@
     margin-left: 10vw;
     width: 80vw;
     font-size: 4vh;
-    color: $gold;
+    color: $lt-gold;
     text-align: center;
     padding-top: 6vh;
   }
 
   .live-header-content:hover {
-    color: $lt-gold;
+    color: $v-lt-gold;
   }
 }
 
@@ -43,7 +43,7 @@
   margin-top: 31vh;
   padding-top: 2vh;
   padding-bottom: 2vh;
-  position: fixed;
+  position: absolute;
   padding-left: 4vw;
 }
 
@@ -62,7 +62,7 @@
   text-align: center;
   color: $lt-gold;
   margin-top: 67vh;
-  position: fixed;
+  position: absolute;
 
   i {
     margin-left: 1vw;
@@ -87,4 +87,8 @@
     text-align: center;
     margin: 0;
   }
+}
+
+.live-content-container {
+  background-color: $dark;
 }

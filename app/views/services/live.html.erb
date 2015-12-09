@@ -17,7 +17,7 @@
     <div class="live-header-background" style="background: url('<%= event.images.first.url %>'); background-size:cover;">
       <div class="live-header">
         <%= link_to event_path(event) do %>
-          <div class="live-header-content">
+          <div class="live-header-content" id="live-header-content-<%= index %>" >
             <h5><%= event.start_date_to_s %> </h5>
             <h6><%= "#{event.start_time_to_s} @ #{event.venue.name}" %></h6>
             <% if event.headliners.count == 1 %>
@@ -26,12 +26,7 @@
               <h4><%= event.headliners_to_s %></h4>
             <% end  %>
             <h6>
-              <% event.openers.each_with_index do |opener, i| %>
-                <%= opener.band.name %>
-                <% unless event.openers.count == i + 1 %>
-                  |
-                <% end %>
-              <% end %>
+              <%= event.openers_to_s %>
             </h6>
           </div>
         <% end %>
@@ -52,4 +47,10 @@
 
 <div class="live-filler-container">
   <p>See All Events <i class="fa fa-arrow-down"></i></p>
+</div>
+
+<div class="twelve columns live-content-container">
+  <% @events.each do |event| %>
+    <%= render partial: "events/event_card", locals: { event: event } %>
+  <% end %>
 </div>

@@ -1,0 +1,60 @@
+.event-card-container {
+  display: inline-block;
+  margin-left: 2.2vw;
+  margin-top: 8vh;
+  margin-bottom: 8vh;
+  vertical-align: top;
+  width: 30vw;
+
+  &:hover > div .ec-top-container {
+    background-color: rgba($v-lt-gold, 0.65);
+  }
+}
+
+.event-card-background {
+  height: 60vh;
+  width: 100%;
+  vertical-align: middle;
+  font-size: 0;
+
+  .ec-top-container {
+    display: inline-block;
+    width: 100%;
+    height: 60vh;
+    background-color: rgba($v-lt-gold, 0.5);
+    white-space:normal;
+    text-align: center;
+    color: $dark;
+
+    h5 {
+      font-size: 4.5vh;
+      margin: 1vh 2vw;
+      font-weight: 600;
+    }
+
+    h6 {
+      font-size: 3vh;
+      text-align: center;
+      color: $dark;
+      margin: 2vh 2vw;
+      padding-bottom: 2vh;
+      font-weight: 600;
+      border-bottom: 1px solid $dark;
+    }
+
+    h6:last-child {
+      border-bottom: 0px;
+    }
+
+    h6:first-child {
+      margin-bottom: 6vh;
+    }
+  }
+}
+
+.ec-bottom-container {
+  background-color: $v-lt-gold;
+  height: 20vh;
+  width: 100%;
+  margin: 0;
+}
