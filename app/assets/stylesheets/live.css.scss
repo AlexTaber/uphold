@@ -17,7 +17,7 @@
   display: inline-block;
   width: 100vw;
   height: 70vh;
-  background-color: rgba($dark, 0.6);
+  background-color: rgba($dark, 0.72);
   white-space:normal;
 
   .live-header-content {
@@ -28,6 +28,7 @@
     font-size: 4vh;
     color: $gold;
     text-align: center;
+    margin-top: 2vh;
   }
 }
 

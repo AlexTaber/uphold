@@ -12,18 +12,18 @@
 
         <div class="live-header-content">
           <h4><%= event.start_date_to_s %> </h4>
-          <h6><%= event.start_time_to_s %></h6>
+          <h5><%= event.start_time_to_s %></h5>
           <% event.headliners.each do |headliner| %>
             <h1><%= headliner.band.name %></h1>
           <% end %>
-          <p>
+          <h6>
             <% event.openers.each_with_index do |opener, i| %>
               <%= opener.band.name %>
               <% unless event.openers.count == i + 1 %>
                 |
               <% end %>
             <% end %>
-          </p>
+          </h6>
         </div>
 
       </div>
