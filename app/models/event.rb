@@ -60,10 +60,10 @@ class Event < ActiveRecord::Base
   end
 
   def start_time_to_s
-    start_time.strftime('%l:%M%p')
+    start_time.strftime('%l:%M%P')
   end
 
   def end_time_to_s
-    end_time.strftime('%l:%M%p')
+    end_time.strftime('%l:%M%P')
   end
 end
