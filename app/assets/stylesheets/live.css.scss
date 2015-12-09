@@ -18,27 +18,34 @@
   width: 100vw;
   height: 70vh;
   background-color: rgba($dark, 0.6);
-
-  .live-arrow {
-    display: inline-block;
-    width: 6vw;
-    font-size: 4vh;
-    color: $gold;
-    padding-left: 4vw;
-    margin-top: 33vh;
-  }
-
-  .live-arrow:hover {
-    background-color: rgba(white, 0.1);
-  }
+  white-space:normal;
 
   .live-header-content {
     display: inline-block;
     vertical-align: top;
+    margin-left: 10vw;
     width: 80vw;
     font-size: 4vh;
     color: $gold;
+    text-align: center;
   }
+}
+
+.live-arrow {
+  width: 6vw;
+  font-size: 4vh;
+  color: $gold;
+  margin-top: 33vh;
+  position: fixed;
+  padding-left: 4vw;
+}
+
+#carousel-right {
+  margin-left: 90vw;
+}
+
+.live-arrow:hover {
+  color: $lt-gold;
 }
 
 .live-filler-container {
