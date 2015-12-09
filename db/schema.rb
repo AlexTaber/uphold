@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20151208212036) do
     t.datetime "end_time",                         null: false
     t.integer  "total_headliners", default: 1,     null: false
     t.boolean  "live",             default: false, null: false
+    t.integer  "venue_id",                         null: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end

@@ -16,10 +16,10 @@
       <div class="live-header">
         <%= link_to live_path do %>
           <div class="live-header-content">
-            <h4><%= event.start_date_to_s %> </h4>
-            <h5><%= event.start_time_to_s %></h5>
+            <h5><%= event.start_date_to_s %> </h5>
+            <h6><%= "#{event.start_time_to_s} @ #{event.venue.name}" %></h6>
             <% event.headliners.each do |headliner| %>
-              <h2><%= headliner.band.name %></h2>
+              <h3><%= headliner.band.name %></h3>
             <% end %>
             <h6>
               <% event.openers.each_with_index do |opener, i| %>

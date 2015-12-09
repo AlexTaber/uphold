@@ -30,6 +30,11 @@
   </div>
 
   <div>
+    <%= f.label :band_id %>
+    <%= f.collection_select(:band_id, Band.all, :id, :name, prompt: "Select Band") %>
+  </div>
+
+  <div>
     <%= f.submit %>
   </div>
 
