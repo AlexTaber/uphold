@@ -14,7 +14,7 @@
   <% @events[0..2].each_with_index do |event, index| %>
     <div class="live-header-background" style="background: url('<%= event.images.first.url %>'); background-size:cover;">
       <div class="live-header">
-        <%= link_to live_path do %>
+        <%= link_to event_path(event) do %>
           <div class="live-header-content">
             <h5><%= event.start_date_to_s %> </h5>
             <h6><%= "#{event.start_time_to_s} @ #{event.venue.name}" %></h6>

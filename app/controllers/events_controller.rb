@@ -2,6 +2,10 @@ class EventsController < ApplicationController
   before_action :event_by_id, only: [:show, :add_band, :edit, :update, :destroy]
   before_action :require_admin
 
+  def index
+    @events = Events.all
+  end
+
   def new
     @event = Event.new
   end
