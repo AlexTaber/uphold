@@ -30,7 +30,7 @@ class Event < ActiveRecord::Base
   end
 
   def self.all_upcoming_events
-    self.all.select(&:active)
+    self.all.select(&:active).sort_by { |event| event.start_time }
   end
 
   def active
