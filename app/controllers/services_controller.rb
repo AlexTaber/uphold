@@ -12,6 +12,7 @@ class ServicesController < ApplicationController
   end
 
   def live
+    @events = Event.all_upcoming_events
   end
 
   def management

@@ -1,1 +1,22 @@
-LIVE PAGE
+<div class="live-header-container">
+  <% @events[0..2].each do |event| %>
+    <div class="live-header-background" style="background: url('<%= event.images.first.url %>'); background-size:cover;">
+      <div class="live-header">
+        <div class="live-arrow">
+          <i class="fa fa-chevron-left"></i>
+        </div>
+        <div class="live-header-content">
+          content
+        </div>
+        <div class="live-arrow">
+          <i class="fa fa-chevron-right"></i>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+
+<div class="live-filler-container">
+  <p>See All Events <i class="fa fa-arrow-down"></i></p>
+</div>

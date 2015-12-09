@@ -1,0 +1,53 @@
+.live-header-container {
+  overflow-x: scroll;
+  width: auto;
+  white-space: nowrap;
+  font-size: 0;
+}
+
+.live-header-background {
+  display: inline-block;
+  width: 100vw;
+  height: 70vh;
+  background-size:cover;
+  positon: fixed;
+}
+
+.live-header {
+  display: inline-block;
+  width: 100vw;
+  height: 70vh;
+  background-color: rgba($dark, 0.6);
+
+  .live-arrow {
+    display: inline-block;
+    width: 6vw;
+    font-size: 4vh;
+    color: $gold;
+    padding-left: 4vw;
+    padding-top: 33vh;
+  }
+
+  .live-header-content {
+    display: inline-block;
+    vertical-align: top;
+    width: 80vw;
+    font-size: 4vh;
+    color: $gold;
+  }
+}
+
+.live-filler-container {
+  height: 20vh;
+  background-color: $dark;
+
+  p {
+    font-family: 'Josefin Slab', serif;
+    padding-top: 5vh;
+    color: $gold;
+    font-size: 7vh;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+  }
+}

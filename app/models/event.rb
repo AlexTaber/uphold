@@ -20,4 +20,12 @@ class Event < ActiveRecord::Base
   def reset_bookings_order
     bookings_by_rank.each_with_index { |booking, index| booking.update_attribute(:rank, index) }
   end
+
+  def self.all_upcoming_events
+    self.all.select(&:active)
+  end
+
+  def active
+    live && start_time > DateTime.now
+  end
 end
