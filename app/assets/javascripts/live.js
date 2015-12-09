@@ -44,11 +44,12 @@ function subtractScrollIndex() {
 function postScroll() {
   $("#carousel-right").fadeIn(200);
   $("#carousel-left").fadeIn(200);
+
   if(scrollIndex == 0) {
     $("#carousel-left").fadeOut(200);
   }
 
-  if(scrollIndex == maxIndex - 1) {
+  if(scrollIndex == maxIndex - 1 || maxIndex == 0) {
     $("#carousel-right").fadeOut(200);
   }
 

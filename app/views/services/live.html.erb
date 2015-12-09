@@ -36,6 +36,16 @@
       </div>
     </div>
   <% end %>
+  <% if @events.empty? %>
+    <div class="live-header-background" style="background: url('/assets/concert'); background-size:cover;">
+      <div class="live-header">
+        <div class="live-header-content">
+          <h1>No Upcoming Events at This Time</h1>
+          <h3>Be sure to check back soon!</h3>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 <div class="live-filler-container">
