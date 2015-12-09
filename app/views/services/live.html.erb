@@ -20,9 +20,11 @@
           <div class="live-header-content">
             <h5><%= event.start_date_to_s %> </h5>
             <h6><%= "#{event.start_time_to_s} @ #{event.venue.name}" %></h6>
-            <% event.headliners.each do |headliner| %>
-              <h3><%= headliner.band.name %></h3>
-            <% end %>
+            <% if event.headliners.count == 1 %>
+              <h3><%= event.headliners_to_s %></h3>
+            <% else %>
+              <h4><%= event.headliners_to_s %></h4>
+            <% end  %>
             <h6>
               <% event.openers.each_with_index do |opener, i| %>
                 <%= opener.band.name %>

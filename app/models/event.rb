@@ -37,6 +37,12 @@ class Event < ActiveRecord::Base
     live && start_time > DateTime.now
   end
 
+  def headliners_to_s
+    str = ""
+    headliners.each { |headliner| str += "#{headliner.band.name} | " }
+    str[0..-3]
+  end
+
   def start_date_to_s
      start_time.strftime('%A, %B %d')
   end
