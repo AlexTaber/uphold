@@ -1,3 +1,5 @@
+<div class="hidden" id="scroll-index" data-scrollIndex="<%= @events.count %>"></div>
+
 <div class="live-arrow" id="carousel-left">
   <i class="fa fa-chevron-left"></i>
 </div>
@@ -5,9 +7,9 @@
   <i class="fa fa-chevron-right"></i>
 </div>
 <div class="dots">
-  <i class="fa fa-circle" id="dot-0"></i>
-  <i class="fa fa-circle" id="dot-1"></i>
-  <i class="fa fa-circle" id="dot-2"></i>
+  <% [3, @events.count].min.times do |x| %>
+    <i class="fa fa-circle" id="dot-<%= x %>"></i>
+  <% end %>
 </div>
 
 <div class="live-header-container">

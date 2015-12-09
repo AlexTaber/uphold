@@ -76,7 +76,7 @@ end
   )
 end
 
-10.times do |x|
+1.times do |x|
   random_time = Faker::Time.between(DateTime.now - 30, DateTime.now + 100)
 
   event = Event.create(
