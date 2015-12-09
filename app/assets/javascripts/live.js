@@ -4,6 +4,7 @@ $(document).ready(function() {
   $("#carousel-left").click(scrollLeft);
   $("#carousel-right").click(scrollRight);
   $("#carousel-left").hide();
+  updateDotColor();
 });
 
 function scrollLeft() {
@@ -43,5 +44,21 @@ function postScroll() {
   } else {
     $("#carousel-left").fadeIn(200);
     $("#carousel-right").fadeIn(200);
+  }
+
+  updateDotColor();
+}
+
+function updateDotColor() {
+  var tarDot = $("#dot-" + String(scrollIndex))
+  var dots = $(".fa-circle");
+  for(var i = 0; i < dots.length; i++) {
+    var curDot = $(dots[i]);
+
+    if(tarDot.attr('id') == curDot.attr('id')) {
+      curDot.css("color", "#B7AA6A");
+    } else {
+      curDot.css("color", "#d5cea9");
+    }
   }
 }
