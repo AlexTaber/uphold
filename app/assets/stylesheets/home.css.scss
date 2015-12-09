@@ -10,7 +10,7 @@
 
 .home-header-container {
   position: relative;
-  background-color: rgba($gold,0.2);
+  background-color: rgba($v-lt-gold,0.8);
   height: 72vh;
 }
 
@@ -191,6 +191,7 @@
 
   &:hover {
     background-color: rgba($dark, 0.6);
+    color: $lt-gold;
   }
 }
 

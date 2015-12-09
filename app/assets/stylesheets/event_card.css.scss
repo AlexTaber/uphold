@@ -1,10 +1,9 @@
 .event-card-container {
   display: inline-block;
-  margin-left: 2.2vw;
-  margin-top: 3vh;
-  margin-bottom: 2vh;
+  margin-left: 6.2vw;
+  margin-top: 8vh;
   vertical-align: top;
-  width: 95vw;
+  width: 88vw;
 
 
   &:hover > div .ec-top-container {
@@ -68,18 +67,10 @@
   }
 }
 
-@media (min-width: 400px) {
-  .event-card-container {
-    width: 84vw;
-    margin-left: 8vw;
-  }
-}
-
 @media (min-width: 640px) {
   .event-card-container {
     width: 46vw;
     margin-left: 2.2vw;
-    margin-top: 8vh;
   }
 }
 
@@ -87,7 +78,5 @@
   .event-card-container {
     width: 30vw;
     margin-left: 2.2vw;
-    margin-top: 8vh;
   }
 }
-

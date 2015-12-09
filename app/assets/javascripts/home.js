@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 function fadeInHeader() {
   $(".home-header-container").hide();
-  $(".home-header-container").fadeIn(2000);
+  $(".home-header-container").fadeIn(3000);
 }
 
 function serviceEnter(e) {
