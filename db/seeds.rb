@@ -86,7 +86,7 @@ end
   end
 
   event_image = Image.create(
-    url: Faker::Placeholdit.image("800x500", 'jpg', 'ffffff', '000', 'Placehold Event Image'),
+    url: "/assets/concert",
     imageable_id: event.id,
     imageable_type: "Event"
   )

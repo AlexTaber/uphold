@@ -1,0 +1,90 @@
+.live-header-container {
+  overflow-x: hidden;
+  width: auto;
+  white-space: nowrap;
+  font-size: 0;
+}
+
+.live-header-background {
+  display: inline-block;
+  width: 100vw;
+  height: 72vh;
+  background-size:cover;
+  positon: fixed;
+}
+
+.live-header {
+  display: inline-block;
+  width: 100vw;
+  height: 72vh;
+  background-color: rgba($dark, 0.72);
+  white-space:normal;
+
+  .live-header-content {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10vw;
+    width: 80vw;
+    font-size: 4vh;
+    color: $gold;
+    text-align: center;
+    padding-top: 4vh;
+  }
+
+  .live-header-content:hover {
+    color: $lt-gold;
+  }
+}
+
+.live-arrow {
+  width: 6vw;
+  font-size: 4vh;
+  color: $gold;
+  margin-top: 31vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  position: fixed;
+  padding-left: 4vw;
+}
+
+.live-arrow:hover {
+  color: $lt-gold;
+  cursor: pointer;
+}
+
+#carousel-right {
+  margin-left: 90vw;
+}
+
+.dots {
+  width: 100vw;
+  font-size: 2vh;
+  text-align: center;
+  color: $lt-gold;
+  margin-top: 65vh;
+  position: fixed;
+
+  i {
+    margin-left: 1vw;
+  }
+
+  i:hover {
+    cursor: pointer;
+  }
+}
+
+.live-filler-container {
+  height: 18vh;
+  background-color: $dark;
+  border-bottom: 1px solid $gold;
+
+  p {
+    font-family: 'Josefin Slab', serif;
+    padding-top: 3.5vh;
+    color: $gold;
+    font-size: 7vh;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+  }
+}
