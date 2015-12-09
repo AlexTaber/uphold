@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.datetime :end_time, null: false
       t.integer  :total_headliners, null: false, default: 1
       t.boolean  :live, null: false, default: false
+      t.integer  :venue_id, null: false
 
       t.timestamps null: false
     end

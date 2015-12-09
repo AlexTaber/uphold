@@ -27,7 +27,7 @@ management = Service.create(
 
 15.times do |x|
   band = Band.create(
-    name: Faker::App.name,
+    name: Faker::Book.title ,
     bio: Faker::Hipster.paragraph(3) + "\r\n\r\n" + Faker::Hipster.paragraph(2)
   )
 
@@ -63,6 +63,19 @@ end
   )
 end
 
+5.times do |x|
+  venue = Venue.create(
+    name: Faker::Book.title,
+    bio: Faker::Hipster.paragraph(3) + "\r\n\r\n" + Faker::Hipster.paragraph(2)
+  )
+
+  venue_image = Image.create(
+    url: "https://upload.wikimedia.org/wikipedia/commons/5/54/VENUE-2-02.jpg",
+    imageable_id: venue.id,
+    imageable_type: "Venue"
+  )
+end
+
 10.times do |x|
   random_time = Faker::Time.between(DateTime.now - 30, DateTime.now + 100)
 
@@ -72,7 +85,8 @@ end
     total_headliners: 1,
     live: x < 8,
     start_time: random_time,
-    end_time: random_time + 3.hours
+    end_time: random_time + 3.hours,
+    venue_id: rand(1..5)
   )
 
   randomized_bands = Band.all.order("RANDOM()")
@@ -92,3 +106,4 @@ end
   )
 
 end
+
