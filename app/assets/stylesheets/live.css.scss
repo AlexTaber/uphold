@@ -53,15 +53,15 @@
 }
 
 .live-arrow {
-  width: 6vw;
+  width: 10vw;
   font-size: 4vh;
   color: $dark;
   margin-top: 31vh;
   padding-top: 2vh;
   padding-bottom: 2vh;
   position: absolute;
-  padding-left: 4vw;
   z-index: 5;
+  text-align: center;
 }
 
 .live-arrow:hover {
