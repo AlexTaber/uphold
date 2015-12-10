@@ -7,7 +7,6 @@ $(document).ready(function() {
   $(".service").on("mouseleave", serviceLeave);
 
   $(".home-about").children("p").css({ opacity: 0 });
-  window.onscroll = checkScroll;
   setInterval(checkScroll, 400);
 });
 
@@ -39,7 +38,6 @@ function fadeInAbouts() {
     var targetOffset = $(window).height() * 0.65;
     var target = child.position().top - targetOffset;
     if($(window).scrollTop() > target) {
-      console.log("HERE");
       child.animate({
         opacity: 1,
         'marginTop' : "-=12vh"
