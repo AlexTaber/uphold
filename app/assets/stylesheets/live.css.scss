@@ -17,7 +17,7 @@
   display: inline-block;
   width: 100vw;
   height: 72vh;
-  background-color: rgba($dark, 0.8);
+  background-color: rgba($v-lt-gold, 0.85);
   white-space:normal;
 
   .live-header-content {
@@ -26,29 +26,30 @@
     margin-left: 10vw;
     width: 80vw;
     font-size: 4vh;
-    color: $lt-gold;
+    color: $dark;
     text-align: center;
     padding-top: 6vh;
   }
 
   .live-header-content:hover {
-    color: $v-lt-gold;
+    color: $dk-gold;
   }
 }
 
 .live-arrow {
   width: 6vw;
   font-size: 4vh;
-  color: $gold;
+  color: $dark;
   margin-top: 31vh;
   padding-top: 2vh;
   padding-bottom: 2vh;
   position: absolute;
   padding-left: 4vw;
+  z-index: 999;
 }
 
 .live-arrow:hover {
-  color: $lt-gold;
+  color: $gold;
   cursor: pointer;
 }
 
@@ -60,9 +61,10 @@
   width: 100vw;
   font-size: 2vh;
   text-align: center;
-  color: $lt-gold;
+  color: $dark;
   margin-top: 67vh;
   position: absolute;
+  z-index: 999;
 
   i {
     margin-left: 1vw;

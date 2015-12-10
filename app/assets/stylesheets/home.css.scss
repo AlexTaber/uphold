@@ -2,7 +2,7 @@
   float:left;
   width:100vw;;
   height:100vh;
-  background:url("show");
+  background:url("show") no-repeat center center;
   background-size:cover;
   position: fixed;
   z-index: -1;
@@ -10,7 +10,7 @@
 
 .home-header-container {
   position: relative;
-  background-color: rgba($v-lt-gold,0.8);
+  background-color: rgba($lt-gold,0.2);
   height: 72vh;
 }
 
