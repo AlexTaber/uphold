@@ -27,29 +27,6 @@
   }
 }
 
-.home-filler-container {
-  position: relative;
-  background-color: $dark;
-  height: 18vh;
-  border-bottom: 1px solid rgba($gold,0.5);
-}
-
-.home-filler {
-  font-family: 'Josefin Slab', serif;
-  color: $gold;
-  font-size: 6vh;
-  font-weight: 600;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
 .header-nav {
   background-color: $dark;
   height: $nav-height;
@@ -192,29 +169,6 @@
   &:hover {
     background-color: rgba($dark, 0.6);
     color: $lt-gold;
-  }
-}
-
-.services-filler-container {
-  height: 18vh;
-  background-color: rgba($dark, 1);
-  position: relative;
-  border-top: 1px solid rgba($gold, 0.4);
-
-  p {
-    font-family: 'Josefin Slab', serif;
-    color: $gold;
-    font-size: 6vh;
-    font-weight: 600;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
   }
 }
 

@@ -1,0 +1,47 @@
+.event-header-background {
+  display: inline-block;
+  width: 100vw;
+  height: 72vh;
+  background-size:cover;
+  positon: fixed;
+}
+
+.event-header {
+  display: inline-block;
+  width: 100vw;
+  height: 72vh;
+  background-color: rgba($v-lt-gold, 0.85);
+  white-space:normal;
+
+  .event-header-content {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10vw;
+    width: 80vw;
+    font-size: 4vh;
+    color: $dark;
+    text-align: center;
+    padding-top: 6vh;
+
+    h5 {
+      font-size: 4vh;
+    }
+
+    h3 {
+      font-size: 5.5vh;
+    }
+
+    h4 {
+      font-size: 5vh;
+    }
+
+    h6 {
+      font-size: 3.2vh;
+    }
+  }
+}
+
+.bands-container {
+  background-color: $dark;
+  padding-bottom: 8vh;
+}

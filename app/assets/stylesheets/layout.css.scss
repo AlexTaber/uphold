@@ -14,3 +14,52 @@
 .hidden {
   display: none;
 }
+
+.buy-button {
+  height: 10vh;
+  width: 220px;
+  color: $dark;
+  font-size: 5vh;
+  margin: 0 auto;
+  margin-top: 10vh;
+  padding-top: 2.5vh;
+  border: 2px solid $dark;
+  border-radius: 6px;
+
+  &:hover {
+    color: $dk-gold;
+    border-color: $dk-gold;
+    cursor: pointer;
+  }
+}
+
+.filler-container {
+  position: relative;
+  background-color: $dark;
+  height: 18vh;
+  border-bottom: 1px solid rgba($gold,0.5);
+
+  &.filler-inverse-container {
+    background-color: $v-lt-gold;
+  }
+}
+
+.filler {
+  font-family: 'Josefin Slab', serif;
+  color: $gold;
+  font-size: 5.5vh;
+  font-weight: 600;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  &.filler-inverse {
+    color: $dark;
+  }
+}

@@ -1,1 +1,36 @@
-show page!
+<div class="event-header-background" style="background: url('<%= @event.images.first.url %>') no-repeat center top; background-size:cover;">
+  <div class="event-header" id="event-header-content-0">
+    <div class="event-header-content" >
+      <h5><%= @event.start_date_to_s %> </h5>
+      <h6><%= "#{@event.start_time_to_s} @ #{@event.venue.name}" %></h6>
+      <% if @event.headliners.count == 1 %>
+        <h3><%= @event.headliners_to_s %></h3>
+      <% else %>
+        <h4><%= @event.headliners_to_s %></h4>
+      <% end  %>
+      <div class="buy-button">
+        Buy Ticket
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="twelve columns filler-container">
+  <p class="filler">
+    The Bands
+    <i class="fa fa-arrow-down"></i>
+  </p>
+</div>
+
+<div class="twelve columns bands-container">
+  <% @event.bookings.each do |booking| %>
+    <%= render partial: "bands/band_card", locals: { band: booking.band } %>
+  <% end %>
+</div>
+
+<div class="twelve columns filler-container filler-inverse-container">
+  <p class="filler filler-inverse">
+    The Venue
+    <i class="fa fa-arrow-down"></i>
+  </p>
+</div>
