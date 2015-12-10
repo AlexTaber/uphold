@@ -25,11 +25,6 @@
   </div>
 
   <div>
-    <%= label_tag :image, "Upload an Image" %>
-    <%= f.file_field :file, multiple: true  %>
-  </div>
-
-  <div>
     <%= f.label :venue_id %>
     <%= f.collection_select(:venue_id, Venue.all, :id, :name, prompt: "Select Venue") %>
   </div>

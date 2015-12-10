@@ -19,7 +19,7 @@
     <div class="ec-bottom-container">
       <p><%= "#{event.start_time_to_s}-#{event.end_time_to_s}" %></p>
       <p><%= "@ #{event.venue.name}" %></p>
-      <p>$<%= rand(8..12) %></p>
+      <p><%= event.standard_price %></p>
     </div>
   </div>
 <% end %>

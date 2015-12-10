@@ -25,6 +25,37 @@
 </div>
 
 <div>
+  <h4>Packages already added for <%= @event.name %> </h4>
+  <% @event.packages.each do |package| %>
+    <div>
+      <%= package.name %> <%= link_to "Remove", package_path(package), method: "DELETE" %>
+    </div>
+  <% end %>
+</div>
+
+<div>
+  <%= render partial: "packages/form", locals: { package: @package, event: @event } %>
+</div>
+
+<div>
+  <h4>Images already added for <%= @event.name %> </h4>
+  <% @event.images.each do |image| %>
+    <div>
+      <%= image.url %> <%= link_to "Remove", image_path(image), method: "DELETE" %>
+    </div>
+  <% end %>
+</div>
+
+<div>
+  <%= form_for @event do |f| %>
+    <%= label_tag :image, "Upload an Image" %>
+    <%= f.file_field :file, multiple: true  %>
+
+    <%= f.submit "Add Image" %>
+  <% end %>
+</div>
+
+<div>
   <%= form_for @event do |f| %>
 
     <%= f.hidden_field :live, value: true %>

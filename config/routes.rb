@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   resources :events do
     member do
-      get 'add_band'
+      get 'add_assets'
     end
   end
   resources :bands, only: [:new, :create, :show, :destroy]
   resources :musicians, except: [:index]
   resources :bookings, only: [:create, :update, :destroy]
+  resources :packages, only: [:create, :update, :destroy]
+  resources :images, only: [:destroy]
 
   root 'services#home'
   get '/login' => 'sessions#new'
