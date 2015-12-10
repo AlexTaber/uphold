@@ -71,6 +71,12 @@
   </p>
 </div>
 
-<div class="twelve columns venue-container">
-  <%= render partial: "venues/venue_card", locals: { venue: @event.venue } %>
-</div>
+<%= link_to root_path do %>
+  <div class="twelve columns venue-background" style="background: url('<%= @event.venue.images.first.url %>') no-repeat center top fixed; background-size:cover;">
+
+    <div class="venue-container">
+      <p class="venue-content"><%= @event.venue.name %></p>
+    </div>
+
+  </div>
+<% end %>

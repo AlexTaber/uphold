@@ -94,10 +94,32 @@
   padding-bottom: 8vh;
 }
 
+.venue-background {
+  display: inline-block;
+  width: 100vw;
+  height: 72vh;
+  z-index: -1;
+}
+
 .venue-container {
-  background-color: $dark;
-  padding-bottom: 8vh;
-  padding-left: 33.3vw;
+  position: static;
+  display: inline-block;
+  width: 100vw;
+  height: 72vh;
+  background-color: rgba($v-lt-gold, 0.65);
+  white-space:normal;
+
+  .venue-content {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10vw;
+    width: 80vw;
+    font-size: 4.5vh;
+    font-family: 'Josefin Slab', serif;
+    color: $dark;
+    text-align: center;
+    padding-top: 30vh;
+  }
 }
 
 @media (min-width: 700px) {
@@ -110,6 +132,12 @@
     .event-info-links {
       width: 43vw;
       margin-left: 2.5vw;
+    }
+  }
+
+  .venue-container {
+    .venue-content {
+      font-size: 6.5vh;
     }
   }
 }
