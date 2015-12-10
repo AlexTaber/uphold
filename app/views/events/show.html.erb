@@ -14,7 +14,7 @@
 <div class="event-header" id="event-header-content-0">
   <div class="event-header-content" >
     <h5><%= @event.start_date_to_s %> </h5>
-    <h6><%= "#{@event.start_time_to_s} @ #{@event.venue.name}" %></h6>
+    <h6><%= "#{@event.start_time_to_s} | #{@event.venue.city}, #{@event.venue.state}" %></h6>
     <% if @event.headliners.count == 1 %>
       <h3><%= @event.headliners_to_s %></h3>
     <% else %>
@@ -76,7 +76,10 @@
   <div class="twelve columns venue-background" style="background: url('<%= @event.venue.images.first.url %>') no-repeat center top fixed; background-size:cover;">
 
     <div class="venue-container">
-      <p class="venue-content"><%= @event.venue.name %></p>
+      <div class="venue-content">
+        <p><%= @event.venue.name %></p>
+        <h6><%= @event.venue.city_state_to_s %> </h6>
+      </div>
     </div>
 
   </div>

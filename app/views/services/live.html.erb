@@ -18,8 +18,8 @@
       <div class="live-header" id="live-header-content-<%= index %>">
         <%= link_to event_path(event) do %>
           <div class="live-header-content" >
-            <h5><%= event.start_date_to_s %> </h5>
-            <h6><%= "#{event.start_time_to_s} @ #{event.venue.name}" %></h6>
+            <h5><%= "#{event.start_date_to_s}" %> </h5>
+            <h6><%= "#{event.venue.name} | #{event.venue.city}, #{event.venue.state}" %></h6>
             <% if event.headliners.count == 1 %>
               <h3><%= event.headliners_to_s %></h3>
             <% else %>

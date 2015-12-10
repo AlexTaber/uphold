@@ -66,7 +66,10 @@ end
 5.times do |x|
   venue = Venue.create(
     name: Faker::Book.title,
-    bio: Faker::Hipster.paragraph(3) + "\r\n\r\n" + Faker::Hipster.paragraph(2)
+    bio: Faker::Hipster.paragraph(3) + "\r\n\r\n" + Faker::Hipster.paragraph(2),
+    state: "VA",
+    city: "Lynchburg",
+    street: "604 Mill Stream Lane"
   )
 
   venue_image = Image.create(

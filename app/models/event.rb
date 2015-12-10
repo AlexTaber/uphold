@@ -53,10 +53,10 @@ class Event < ActiveRecord::Base
 
   def openers_to_s_abbreviated
     my_openers = openers
-    str = events_to_s(my_openers[0..4])
-    extra_bands_count = my_openers.count - 5
+    str = events_to_s(my_openers[0..2])
+    extra_bands_count = my_openers.count - 3
     str += " | And #{extra_bands_count} Others..." if extra_bands_count > 1
-    str += " | #{my_openers[5].band.name}" if extra_bands_count == 1
+    str += " | #{my_openers[3].band.name}" if extra_bands_count == 1
     str
   end
 
