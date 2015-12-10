@@ -1,12 +1,13 @@
 .event-header-background {
   display: inline-block;
   width: 100vw;
-  height: 72vh;
-  background-size:cover;
-  positon: fixed;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
 }
 
 .event-header {
+  position: static;
   display: inline-block;
   width: 100vw;
   height: 72vh;
@@ -42,33 +43,67 @@
 }
 
 .event-info-container {
-  background-color: $dark;
+  position:relative;
+  background-color: rgba($dark, 0.8);
   padding-top: 8vh;
   padding-bottom: 8vh;
+  min-height: 72vh;
 
   .event-info {
     display: inline-block;
-    width: 40vw;
+    width: 90vw;
     margin-left: 5vw;
     margin-right: 4vw;
     color: $lt-gold;
+    font-size: 4vh;
+    margin-bottom: 8vh;
   }
 
-  .event-info-image {
+  .event-info-links {
     display: inline-block;
-    height: 60vh;
-    width: 45vw;
-    margin-left: 2.5vw;
     vertical-align: top;
-    font-size: 0;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    text-align: center;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right: 4vw;
+    color: $lt-gold;
+
+    .event-info-button {
+      height: 10vh;
+      width: 220px;
+      color: $lt-gold;
+      font-size: 5vh;
+      margin: 0 auto;
+      margin-bottom: 3vh;
+      margin-top: 3vh;
+      padding-top: 2.5vh;
+      border: 2px solid $lt-gold;
+      border-radius: 6px;
+
+      &:hover {
+        color: $v-lt-gold;
+        border-color: $v-lt-gold;
+        cursor: pointer;
+      }
+    }
   }
 }
 
 .bands-container {
   background-color: $dark;
   padding-bottom: 8vh;
+}
+
+@media (min-width: 700px) {
+  .event-info-container {
+    .event-info {
+      width: 40vw;
+      margin-left: 5vw;
+    }
+
+    .event-info-links {
+      width: 43vw;
+      margin-left: 2.5vw;
+    }
+  }
 }
