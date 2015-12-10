@@ -68,7 +68,7 @@ function updateDotColor() {
     if(tarDot.attr('id') == curDot.attr('id')) {
       curDot.css("color", "#060709");
     } else {
-      curDot.css("color", "#B7AA6A");
+      curDot.css("color", "#8a7e42");
     }
   }
 }

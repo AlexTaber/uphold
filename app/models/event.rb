@@ -51,6 +51,15 @@ class Event < ActiveRecord::Base
     events_to_s(openers)
   end
 
+  def openers_to_s_abbreviated
+    my_openers = openers
+    str = events_to_s(my_openers[0..4])
+    extra_bands_count = my_openers.count - 5
+    str += " | And #{extra_bands_count} Others..." if extra_bands_count > 1
+    str += " | #{my_openers[5].band.name}" if extra_bands_count == 1
+    str
+  end
+
   def start_date_to_s
      start_time.strftime('%A, %B %d')
   end

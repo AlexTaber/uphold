@@ -29,6 +29,22 @@
     color: $dark;
     text-align: center;
     padding-top: 6vh;
+
+    h5 {
+      font-size: 4vh;
+    }
+
+    h3 {
+      font-size: 5.5vh;
+    }
+
+    h4 {
+      font-size: 5vh;
+    }
+
+    h6 {
+      font-size: 3.2vh;
+    }
   }
 
   .live-header-content:hover {
@@ -49,7 +65,7 @@
 }
 
 .live-arrow:hover {
-  color: $gold;
+  color: $dk-gold;
   cursor: pointer;
 }
 
