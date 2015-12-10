@@ -45,7 +45,7 @@
   padding-bottom: 2vh;
   position: absolute;
   padding-left: 4vw;
-  z-index: 999;
+  z-index: 5;
 }
 
 .live-arrow:hover {
@@ -64,7 +64,7 @@
   color: $dark;
   margin-top: 67vh;
   position: absolute;
-  z-index: 999;
+  z-index: 5;
 
   i {
     margin-left: 1vw;

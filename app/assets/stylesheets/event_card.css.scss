@@ -42,8 +42,6 @@
       text-align: center;
       color: $dark;
       margin: 2vh 2vw;
-      padding-bottom: 2vh;
-      border-bottom: 1px solid $dark;
     }
 
     h6:last-child {
@@ -52,6 +50,17 @@
 
     h6:first-child {
       margin-bottom: 6vh;
+    }
+
+    hr {
+      margin: 0 auto;
+      padding: 0;
+      width: 33.3%;
+      border-color: $dark;
+    }
+
+    hr:last-of-type {
+      display: none;
     }
   }
 }
