@@ -41,6 +41,33 @@
   }
 }
 
+.event-info-container {
+  background-color: $dark;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+
+  .event-info {
+    display: inline-block;
+    width: 40vw;
+    margin-left: 5vw;
+    margin-right: 4vw;
+    color: $lt-gold;
+  }
+
+  .event-info-image {
+    display: inline-block;
+    height: 60vh;
+    width: 45vw;
+    margin-left: 2.5vw;
+    vertical-align: top;
+    font-size: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
 .bands-container {
   background-color: $dark;
   padding-bottom: 8vh;

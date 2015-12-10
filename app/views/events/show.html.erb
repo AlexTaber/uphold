@@ -1,3 +1,14 @@
+<% if is_admin? %>
+  <div class="twelve columns admin-bar">
+    <%= link_to edit_event_path(@event) do %>
+      <i class="fa fa-pencil-square-o"></i>
+    <% end %>
+    <%= link_to edit_event_path(@event) do %>
+      <i class="fa fa-plus"></i>
+    <% end %>
+  </div>
+<% end %>
+
 <div class="event-header-background" style="background: url('<%= @event.images.first.url %>') no-repeat center top; background-size:cover;">
   <div class="event-header" id="event-header-content-0">
     <div class="event-header-content" >
@@ -17,6 +28,23 @@
 
 <div class="twelve columns filler-container">
   <p class="filler">
+    Learn More
+    <i class="fa fa-arrow-down"></i>
+  </p>
+</div>
+
+<div class="twelve columns event-info-container">
+  <div class="event-info">
+    <%= simple_format(@event.description) %>
+  </div>
+
+  <div class="event-info-image" style="background: url('<%= @event.images.first.url %>') no-repeat center center; background-size:cover;">
+
+  </div>
+</div>
+
+<div class="twelve columns filler-container filler-inverse-container">
+  <p class="filler filler-inverse">
     The Bands
     <i class="fa fa-arrow-down"></i>
   </p>

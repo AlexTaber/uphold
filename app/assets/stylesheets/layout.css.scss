@@ -63,3 +63,22 @@
     color: $dark;
   }
 }
+
+.admin-bar {
+  height: 10vh;
+  background-color: $dark;
+  color: $gold;
+  text-align: center;
+
+  i {
+    font-size: 4vh;
+    padding-top: 3vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    color: $gold;
+  }
+
+  i:hover {
+    color: $lt-gold;
+  }
+}
