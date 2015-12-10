@@ -94,6 +94,12 @@
   padding-bottom: 8vh;
 }
 
+.venue-container {
+  background-color: $dark;
+  padding-bottom: 8vh;
+  padding-left: 33.3vw;
+}
+
 @media (min-width: 700px) {
   .event-info-container {
     .event-info {

@@ -70,3 +70,7 @@
     <i class="fa fa-arrow-down"></i>
   </p>
 </div>
+
+<div class="twelve columns venue-container">
+  <%= render partial: "venues/venue_card", locals: { venue: @event.venue } %>
+</div>
