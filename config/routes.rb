@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :events do
     member do
-      get 'add_band'
+      get 'add_band_assets'
     end
   end
   resources :bands, only: [:new, :create, :show, :destroy]
