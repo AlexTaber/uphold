@@ -5,6 +5,10 @@ $(document).ready(function() {
   $("#event-header-content-" + String(scrollIndex)).fadeIn(2000);
 
   setInterval(fadeInVenue, 400);
+
+  //button scrolls
+  $("#bands-button").click(bandsScroll);
+  $("#venue-button").click(venueScroll);
 });
 
 function fadeInVenue() {
@@ -19,4 +23,23 @@ function fadeInVenue() {
       venueFade = true;
     }
   }
+}
+
+function bandsScroll() {
+  var target = $(".bands-container");
+  var offset = $(window).height() * 0.1;
+  scrollToEl(target, offset);
+}
+
+function venueScroll() {
+  var target = $(".venue-container");
+  var offset = $(window).height() * 0.1;
+  scrollToEl(target, offset);
+}
+
+function scrollToEl(target, offset) {
+  console.log("HERE");
+  $('html, body').animate({
+      scrollTop: target.offset().top - offset
+  }, 1200);
 }
