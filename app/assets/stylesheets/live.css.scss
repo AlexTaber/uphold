@@ -17,7 +17,7 @@
   display: inline-block;
   width: 100vw;
   height: 72vh;
-  background-color: rgba($dark, 0.72);
+  background-color: rgba($v-lt-gold, 0.85);
   white-space:normal;
 
   .live-header-content {
@@ -26,29 +26,46 @@
     margin-left: 10vw;
     width: 80vw;
     font-size: 4vh;
-    color: $gold;
+    color: $dark;
     text-align: center;
-    padding-top: 4vh;
+    padding-top: 6vh;
+
+    h5 {
+      font-size: 4vh;
+    }
+
+    h3 {
+      font-size: 5.5vh;
+    }
+
+    h4 {
+      font-size: 5vh;
+    }
+
+    h6 {
+      font-size: 3.2vh;
+    }
   }
 
   .live-header-content:hover {
-    color: $lt-gold;
+    color: $dk-gold;
   }
 }
 
 .live-arrow {
-  width: 6vw;
+  width: 10vw;
   font-size: 4vh;
-  color: $gold;
+  color: $dark;
   margin-top: 31vh;
   padding-top: 2vh;
   padding-bottom: 2vh;
-  position: fixed;
-  padding-left: 4vw;
+  position: absolute;
+  z-index: 5;
+  text-align: center;
 }
 
 .live-arrow:hover {
-  color: $lt-gold;
+  color: $dk-gold;
   cursor: pointer;
 }
 
@@ -60,9 +77,10 @@
   width: 100vw;
   font-size: 2vh;
   text-align: center;
-  color: $lt-gold;
-  margin-top: 65vh;
-  position: fixed;
+  color: $dark;
+  margin-top: 67vh;
+  position: absolute;
+  z-index: 5;
 
   i {
     margin-left: 1vw;
@@ -73,18 +91,7 @@
   }
 }
 
-.live-filler-container {
-  height: 18vh;
+.live-content-container {
   background-color: $dark;
-  border-bottom: 1px solid $gold;
-
-  p {
-    font-family: 'Josefin Slab', serif;
-    padding-top: 3.5vh;
-    color: $gold;
-    font-size: 7vh;
-    font-weight: 600;
-    text-align: center;
-    margin: 0;
-  }
+  padding-bottom: 8vh;
 }

@@ -2,7 +2,7 @@
   float:left;
   width:100vw;;
   height:100vh;
-  background:url("show");
+  background:url("show") no-repeat center center;
   background-size:cover;
   position: fixed;
   z-index: -1;
@@ -10,7 +10,7 @@
 
 .home-header-container {
   position: relative;
-  background-color: rgba($gold,0.2);
+  background-color: rgba($lt-gold,0.2);
   height: 72vh;
 }
 
@@ -27,36 +27,12 @@
   }
 }
 
-.home-filler-container {
-  position: relative;
-  background-color: $dark;
-  height: 18vh;
-  border-bottom: 1px solid rgba($gold,0.5);
-}
-
-.home-filler {
-  font-family: 'Josefin Slab', serif;
-  color: $gold;
-  font-size: 7vh;
-  font-weight: 600;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
 .header-nav {
   background-color: $dark;
   height: $nav-height;
   width: 100%;
   z-index: 999;
   position: fixed;
-  border-bottom: 1px solid rgba($gold,0.5);
 
   li {
     display: inline-block;
@@ -191,29 +167,7 @@
 
   &:hover {
     background-color: rgba($dark, 0.6);
-  }
-}
-
-.services-filler-container {
-  height: 18vh;
-  background-color: rgba($dark, 1);
-  position: relative;
-  border-top: 1px solid rgba($gold, 0.4);
-
-  p {
-    font-family: 'Josefin Slab', serif;
-    color: $gold;
-    font-size: 7vh;
-    font-weight: 600;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
+    color: $lt-gold;
   }
 }
 
@@ -241,13 +195,13 @@
 
 .social-icons {
   width: 100vw;
-  height: 16vh;
+  height: 18vh;
   background-color: rgba($dark, 1);
   text-align: center;
 
   i {
     font-size: 8vh;
-    margin-top: 4vh;
+    margin-top: 5.2vh;
     margin-left: 1vw;
     color: $gold;
   }

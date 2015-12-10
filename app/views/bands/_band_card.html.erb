@@ -1,0 +1,12 @@
+<%= link_to root_path do %>
+  <div class="band-card-container">
+    <div class="band-card-background" style="background: url('<%= band.images.first.url %>') no-repeat center center; background-size:cover;">
+      <div class="bc-top-container">
+
+      </div>
+    </div>
+    <div class="bc-bottom-container">
+      <p><%= band.name %></p>
+    </div>
+  </div>
+<% end %>

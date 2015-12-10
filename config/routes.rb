@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :events, except: [:index] do
+  resources :events do
     member do
       get 'add_band'
     end

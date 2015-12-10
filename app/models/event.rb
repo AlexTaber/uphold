@@ -30,11 +30,34 @@ class Event < ActiveRecord::Base
   end
 
   def self.all_upcoming_events
-    self.all.select(&:active)
+    self.all.select(&:active).sort_by { |event| event.start_time }
   end
 
   def active
-    live && start_time > DateTime.now
+    live && start_time > DateTime.now - 5.hours
+  end
+
+  def events_to_s(events)
+    str = ""
+    events.each { |headliner| str += "#{headliner.band.name} | " }
+    str[0..-3]
+  end
+
+  def headliners_to_s
+    events_to_s(headliners)
+  end
+
+  def openers_to_s
+    events_to_s(openers)
+  end
+
+  def openers_to_s_abbreviated
+    my_openers = openers
+    str = events_to_s(my_openers[0..4])
+    extra_bands_count = my_openers.count - 5
+    str += " | And #{extra_bands_count} Others..." if extra_bands_count > 1
+    str += " | #{my_openers[5].band.name}" if extra_bands_count == 1
+    str
   end
 
   def start_date_to_s
@@ -46,10 +69,10 @@ class Event < ActiveRecord::Base
   end
 
   def start_time_to_s
-    start_time.strftime('%l:%M%p')
+    start_time.strftime('%l:%M%P')
   end
 
   def end_time_to_s
-    end_time.strftime('%l:%M%p')
+    end_time.strftime('%l:%M%P')
   end
 end

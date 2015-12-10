@@ -1,0 +1,25 @@
+<%= link_to event_path(event) do %>
+  <div class="event-card-container">
+    <div class="event-card-background" style="background: url('<%= event.images.first.url %>') no-repeat center center; background-size:cover;">
+      <div class="ec-top-container">
+        <h6><%= event.start_date_to_s %> </h6>
+        <% event.headliners.each do |headliner| %>
+          <h5><%= headliner.band.name %></h5>
+        <% end %>
+        <% event.openers[0..1].each do |opener| %>
+          <h6><%= opener.band.name %></h6>
+          <hr>
+        <% end %>
+        <% if event.openers.count > 2 %>
+          <h6>And <%= event.openers.count - 2 %> Others</h6>
+          <hr>
+        <% end %>
+      </div>
+    </div>
+    <div class="ec-bottom-container">
+      <p><%= "#{event.start_time_to_s}-#{event.end_time_to_s}" %></p>
+      <p><%= "@ #{event.venue.name}" %></p>
+      <p>$<%= rand(8..12) %></p>
+    </div>
+  </div>
+<% end %>

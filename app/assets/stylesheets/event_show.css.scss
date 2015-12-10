@@ -1,0 +1,144 @@
+.event-header-background {
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+}
+
+.event-header {
+  position: static;
+  display: inline-block;
+  width: 100vw;
+  height: 72vh;
+  background-color: rgba($v-lt-gold, 0.85);
+  white-space:normal;
+
+  .event-header-content {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10vw;
+    width: 80vw;
+    font-size: 4vh;
+    color: $dark;
+    text-align: center;
+    padding-top: 6vh;
+
+    h5 {
+      font-size: 4vh;
+    }
+
+    h3 {
+      font-size: 5.5vh;
+    }
+
+    h4 {
+      font-size: 5vh;
+    }
+
+    h6 {
+      font-size: 3.2vh;
+    }
+  }
+}
+
+.event-info-container {
+  position:relative;
+  background-color: rgba($dark, 0.8);
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+  min-height: 72vh;
+
+  .event-info {
+    display: inline-block;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right: 4vw;
+    color: $lt-gold;
+    font-size: 4vh;
+    margin-bottom: 8vh;
+  }
+
+  .event-info-links {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right: 4vw;
+    color: $lt-gold;
+
+    .event-info-button {
+      height: 10vh;
+      width: 220px;
+      color: $lt-gold;
+      font-size: 5vh;
+      margin: 0 auto;
+      margin-bottom: 3vh;
+      margin-top: 3vh;
+      padding-top: 2.5vh;
+      border: 2px solid $lt-gold;
+      border-radius: 6px;
+
+      &:hover {
+        color: $v-lt-gold;
+        border-color: $v-lt-gold;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.bands-container {
+  background-color: $dark;
+  padding-bottom: 8vh;
+}
+
+.venue-background {
+  display: inline-block;
+  width: 100vw;
+  height: 72vh;
+  z-index: -1;
+}
+
+.venue-container {
+  position: static;
+  display: inline-block;
+  width: 100vw;
+  height: 72vh;
+  background-color: rgba($v-lt-gold, 0.65);
+  white-space:normal;
+  opacity: 0;
+
+  .venue-content {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10vw;
+    width: 80vw;
+    font-size: 4.5vh;
+    font-family: 'Josefin Slab', serif;
+    color: $dark;
+    text-align: center;
+    padding-top: 30vh;
+  }
+}
+
+@media (min-width: 700px) {
+  .event-info-container {
+    .event-info {
+      width: 40vw;
+      margin-left: 5vw;
+    }
+
+    .event-info-links {
+      width: 43vw;
+      margin-left: 2.5vw;
+    }
+  }
+
+  .venue-container {
+    .venue-content {
+      font-size: 6.5vh;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+<% if is_admin? %>
+  <div class="twelve columns admin-bar">
+    <%= link_to edit_event_path(@event) do %>
+      <i class="fa fa-pencil-square-o"></i>
+    <% end %>
+    <%= link_to add_band_event_path(@event) do %>
+      <i class="fa fa-plus"></i>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="event-header-background" style="background: url('<%= @event.images.first.url %>') no-repeat center top fixed; background-size:cover;">
+</div>
+<div class="event-header" id="event-header-content-0">
+  <div class="event-header-content" >
+    <h5><%= @event.start_date_to_s %> </h5>
+    <h6><%= "#{@event.start_time_to_s} @ #{@event.venue.name}" %></h6>
+    <% if @event.headliners.count == 1 %>
+      <h3><%= @event.headliners_to_s %></h3>
+    <% else %>
+      <h4><%= @event.headliners_to_s %></h4>
+    <% end  %>
+    <div class="buy-button">
+      Buy Ticket
+    </div>
+  </div>
+</div>
+
+<div class="twelve columns filler-container" id="start">
+  <p class="filler">
+    Learn More
+    <i class="fa fa-arrow-down"></i>
+  </p>
+</div>
+
+<div class="twelve columns event-info-container">
+  <div class="event-info">
+    <%= simple_format(@event.description) %>
+  </div>
+
+  <div class="event-info-links">
+    <div class="event-info-button" id="bands-button">
+      Bands
+    </div>
+    <div class="event-info-button" id="venue-button">
+      Venue
+    </div>
+    <div class="event-info-button" id="tickets-button">
+      Buy Ticket
+    </div>
+  </div>
+</div>
+
+<div class="twelve columns filler-container filler-inverse-container">
+  <p class="filler filler-inverse">
+    The Bands
+    <i class="fa fa-arrow-down"></i>
+  </p>
+</div>
+
+<div class="twelve columns bands-container">
+  <% @event.bookings.each do |booking| %>
+    <%= render partial: "bands/band_card", locals: { band: booking.band } %>
+  <% end %>
+</div>
+
+<div class="twelve columns filler-container filler-inverse-container">
+  <p class="filler filler-inverse">
+    The Venue
+    <i class="fa fa-arrow-down"></i>
+  </p>
+</div>
+
+<%= link_to root_path do %>
+  <div class="twelve columns venue-background" style="background: url('<%= @event.venue.images.first.url %>') no-repeat center top fixed; background-size:cover;">
+
+    <div class="venue-container">
+      <p class="venue-content"><%= @event.venue.name %></p>
+    </div>
+
+  </div>
+<% end %>
