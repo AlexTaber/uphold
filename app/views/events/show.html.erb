@@ -3,7 +3,7 @@
     <%= link_to edit_event_path(@event) do %>
       <i class="fa fa-pencil-square-o"></i>
     <% end %>
-    <%= link_to add_band_assets_event_path(@event) do %>
+    <%= link_to add_assets_event_path(@event) do %>
       <i class="fa fa-plus"></i>
     <% end %>
   </div>
@@ -20,6 +20,7 @@
     <% else %>
       <h4><%= @event.headliners_to_s %></h4>
     <% end  %>
+    <h6>General Admission: <%= @event.standard_price %></h6>
     <div class="buy-button">
       Buy Ticket
     </div>

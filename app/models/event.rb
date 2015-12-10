@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
   has_many :images, as: :imageable
   has_many :sounds, as: :soundable
   has_many :links, as: :linkable
-  has_many :sales
+  has_many :packages
 
   def self.pending
     self.where(live: false)
@@ -74,5 +74,9 @@ class Event < ActiveRecord::Base
 
   def end_time_to_s
     end_time.strftime('%l:%M%P')
+  end
+
+  def standard_price
+    packages.first ? packages.first.price_to_s : "Free"
   end
 end

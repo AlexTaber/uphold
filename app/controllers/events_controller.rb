@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :event_by_id, only: [:show, :add_event_asset, :edit, :update, :destroy]
+  before_action :event_by_id, only: [:show, :add_assets, :edit, :update, :destroy]
   before_action :require_admin, except: [:show, :index]
 
   def index
@@ -19,7 +19,7 @@ class EventsController < ApplicationController
       upload_images(@event, "http://www.connexionsweb.com/wp-content/uploads/2015/03/businessLogo.png", params)
 
       flash[:notice] = "Event #{@event.name} successfully added"
-      redirect_to add_event_asset_event_path(@event)
+      redirect_to add_assets_event_path(@event)
     else
       flash[:warn] = "Invalid event data, please try again"
       redirect_to :back
@@ -36,6 +36,9 @@ class EventsController < ApplicationController
     @event.assign_attributes(event_params)
     if @event.valid?
       @event.save
+
+      upload_images(@event, nil, params) if params[:event][:file]
+
       flash[:notice] = "Event #{@event.name} has been successfully posted"
       redirect_to live_path
     else
@@ -55,7 +58,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def add_event_asset
+  def add_assets
     @booking = Booking.new
     @package = Package.new
   end
