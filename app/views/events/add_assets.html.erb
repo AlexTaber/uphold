@@ -34,3 +34,16 @@
     </div>
   <% end %>
 </div>
+
+<div>
+  <h4>Packages already added for <%= @event.name %> </h4>
+  <% @event.packages.each do |package| %>
+    <div>
+      <%= package.name %> <%= link_to "Remove", package_path(package), method: "DELETE" %>
+    </div>
+  <% end %>
+</div>
+
+<div>
+  <%= render partial: "packages/form", locals: { package: @package, event: @event } %>
+</div>

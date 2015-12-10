@@ -1,4 +1,4 @@
-class Musician < ActiveRecord::Base
+class Package < ActiveRecord::Base
   include ActionView::Helpers::NumberHelper
 
   has_many: :sales

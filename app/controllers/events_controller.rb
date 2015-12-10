@@ -57,6 +57,7 @@ class EventsController < ApplicationController
 
   def add_event_asset
     @booking = Booking.new
+    @package = Package.new
   end
 
   def pending

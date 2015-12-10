@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :bands, only: [:new, :create, :show, :destroy]
   resources :musicians, except: [:index]
   resources :bookings, only: [:create, :update, :destroy]
+  resources :packages, only: [:create, :update, :destroy]
 
   root 'services#home'
   get '/login' => 'sessions#new'
