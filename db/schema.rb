@@ -144,10 +144,16 @@ ActiveRecord::Schema.define(version: 20151210185209) do
   end
 
   create_table "venues", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.text     "bio",        null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                      null: false
+    t.text     "bio",                       null: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "city",                      null: false
+    t.string   "state",                     null: false
+    t.string   "street",                    null: false
+    t.string   "country",    default: "US", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "videos", force: :cascade do |t|
