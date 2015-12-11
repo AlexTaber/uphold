@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 20151210185209) do
     t.integer  "total_headliners", default: 1,     null: false
     t.boolean  "live",             default: false, null: false
     t.integer  "venue_id",                         null: false
+    t.integer  "profile_image_id"
+    t.integer  "cover_image_id"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end
