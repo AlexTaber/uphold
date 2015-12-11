@@ -40,7 +40,7 @@ class EventsController < ApplicationController
       upload_images(@event, nil, params) if params[:event][:file]
 
       flash[:notice] = "Event #{@event.name} has been successfully posted"
-      redirect_to live_path
+      redirect_to :back
     else
       flash[:warn] = "Unable to save event, please try again"
       redirect_to :back

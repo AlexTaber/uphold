@@ -11,7 +11,19 @@ class VenuesController < ApplicationController
   end
 
   def create
+    @venue = Venue.new(venue_params)
 
+    if @venue.valid?
+      @venue.save
+
+      upload_images(@venue, "https://upload.wikimedia.org/wikipedia/commons/5/54/VENUE-2-02.jpg", params)
+
+      flash[:notice] = "venue #{@venue.name} successfully added"
+      redirect_to admin_path
+    else
+      flash[:warn] = "Invalid venue data, please try again"
+      redirect_to :back
+    end
   end
 
   def show
@@ -31,5 +43,11 @@ class VenuesController < ApplicationController
   end
 
   def home
+  end
+
+  private
+
+  def venue_params
+    params.require(:venue).permit(:name, :bio, :street, :city, :state)
   end
 end
