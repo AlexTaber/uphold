@@ -12,9 +12,9 @@
 
 <div>
   <%= form_for @venue do |f| %>
-    <%= label_tag :image, "Upload an Image" %>
+    <%= label_tag :image, "Upload Images" %>
     <%= f.file_field :file, multiple: true  %>
 
-    <%= f.submit "Add Image" %>
+    <%= f.submit "Add Images" %>
   <% end %>
 </div>

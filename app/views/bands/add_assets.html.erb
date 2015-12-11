@@ -1,0 +1,20 @@
+<div>
+  <h4>Images already added for <%= @band.name %> </h4>
+  <% @band.images.each do |image| %>
+    <div>
+      <%= image.url %>
+      <%= link_to "Remove", image_path(image), method: "DELETE" %>
+      <%= link_to "Set As Profile Image", band_path(@band, band: { profile_image_id: image.id }), method: "PUT" %>
+      <%= link_to "Set As Cover Image", band_path(@band, band: { cover_image_id: image.id }), method: "PUT" %>
+    </div>
+  <% end %>
+</div>
+
+<div>
+  <%= form_for @band do |f| %>
+    <%= label_tag :image, "Upload Images" %>
+    <%= f.file_field :file, multiple: true  %>
+
+    <%= f.submit "Add Images" %>
+  <% end %>
+</div>

@@ -4,7 +4,11 @@ Rails.application.routes.draw do
       get 'add_assets'
     end
   end
-  resources :bands, only: [:new, :create, :show, :destroy]
+  resources :bands do
+    member do
+      get 'add_assets'
+    end
+  end
   resources :venues do
     member do
       get 'add_assets'
