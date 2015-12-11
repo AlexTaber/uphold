@@ -7,7 +7,7 @@ $(document).ready(function() {
   $(".service").on("mouseleave", serviceLeave);
 
   $(".home-about").children("p").css({ opacity: 0 });
-  setInterval(checkScroll, 400);
+  setInterval(checkScroll, 200);
 });
 
 function fadeInHeader() {
