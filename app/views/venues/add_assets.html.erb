@@ -1,0 +1,20 @@
+<div>
+  <h4>Images already added for <%= @venue.name %> </h4>
+  <% @venue.images.each do |image| %>
+    <div>
+      <%= image.url %>
+      <%= link_to "Remove", image_path(image), method: "DELETE" %>
+      <%= link_to "Set As Profile Image", venue_path(@venue, venue: { profile_image_id: image.id }), method: "PUT" %>
+      <%= link_to "Set As Cover Image", venue_path(@venue, venue: { cover_image_id: image.id }), method: "PUT" %>
+    </div>
+  <% end %>
+</div>
+
+<div>
+  <%= form_for @venue do |f| %>
+    <%= label_tag :image, "Upload an Image" %>
+    <%= f.file_field :file, multiple: true  %>
+
+    <%= f.submit "Add Image" %>
+  <% end %>
+</div>

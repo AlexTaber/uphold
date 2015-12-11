@@ -73,7 +73,7 @@
 </div>
 
 <%= link_to root_path do %>
-  <div class="twelve columns venue-background" style="background: url('<%= @event.venue.images.first.url %>') no-repeat center top fixed; background-size:cover;">
+  <div class="twelve columns venue-background" style="background: url('<%= @event.venue.active_cover_image.url %>') no-repeat center top fixed; background-size:cover;">
 
     <div class="venue-container">
       <div class="venue-content">
