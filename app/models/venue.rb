@@ -16,4 +16,12 @@ class Venue < ActiveRecord::Base
   def city_state_to_s
     "#{city}, #{state}"
   end
+
+  def active_profile_image
+    profile_image || images.first
+  end
+
+  def active_cover_image
+    cover_image || images.first
+  end
 end
