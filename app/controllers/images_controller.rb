@@ -2,10 +2,6 @@ class ImagesController < ApplicationController
   before_action :require_admin
   before_action :image_by_id
 
-  def update
-    @image.assign_attributes(image_params)
-  end
-
   def destroy
     if @image.delete
       flash[:notice] = "Image deleted"
@@ -17,10 +13,6 @@ class ImagesController < ApplicationController
   end
 
   private
-
-  def image_params
-
-  end
 
   def image_by_id
     @image = Image.find_by(id: params[:id])
