@@ -1,6 +1,6 @@
 class VenuesController < ApplicationController
   before_action :require_admin, except: [:index, :show]
-  before_action :venue_by_id, only: [:show, :edit, :update, :destroy]
+  before_action :venue_by_id, only: [:show, :edit, :update, :destroy, :add_assets]
 
   def index
 
@@ -35,7 +35,18 @@ class VenuesController < ApplicationController
   end
 
   def update
+    @venue.assign_attributes(venue_params)
+    if @venue.valid?
+      @venue.save
 
+      upload_images(@venue, nil, params) if params[:venue][:file]
+
+      flash[:notice] = "venue #{@venue.name} has been successfully posted"
+      redirect_to :back
+    else
+      flash[:warn] = "Unable to save venue, please try again"
+      redirect_to :back
+    end
   end
 
   def destroy
@@ -45,9 +56,17 @@ class VenuesController < ApplicationController
   def home
   end
 
+  def add_assets
+
+  end
+
   private
 
+  def venue_by_id
+    @venue = Venue.find_by(id: params[:id])
+  end
+
   def venue_params
-    params.require(:venue).permit(:name, :bio, :street, :city, :state)
+    params.require(:venue).permit(:name, :bio, :street, :city, :state, :cover_image_id, :profile_image_id)
   end
 end

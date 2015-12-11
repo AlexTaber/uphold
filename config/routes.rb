@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     end
   end
   resources :bands, only: [:new, :create, :show, :destroy]
-  resources :venues
+  resources :venues do
+    member do
+      get 'add_assets'
+    end
+  end
   resources :musicians, except: [:index]
   resources :bookings, only: [:create, :update, :destroy]
   resources :packages, only: [:create, :update, :destroy]
