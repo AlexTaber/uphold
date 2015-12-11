@@ -32,11 +32,13 @@ ActiveRecord::Schema.define(version: 20151210185209) do
   end
 
   create_table "bands", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "name",             null: false
     t.text     "bio"
     t.integer  "service_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "profile_image_id"
+    t.integer  "cover_image_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "bands_users", force: :cascade do |t|

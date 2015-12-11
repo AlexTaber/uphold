@@ -19,7 +19,7 @@ class VenuesController < ApplicationController
       upload_images(@venue, "https://upload.wikimedia.org/wikipedia/commons/5/54/VENUE-2-02.jpg", params)
 
       flash[:notice] = "venue #{@venue.name} successfully added"
-      redirect_to admin_path
+      redirect_to add_assets_venue_path(@venue)
     else
       flash[:warn] = "Invalid venue data, please try again"
       redirect_to :back
