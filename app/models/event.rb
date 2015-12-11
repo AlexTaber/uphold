@@ -8,6 +8,8 @@ class Event < ActiveRecord::Base
   has_many :sounds, as: :soundable
   has_many :links, as: :linkable
   has_many :packages
+  belongs_to :profile_image, class_name: "Image", foreign_key: "profile_image_id"
+  belongs_to :cover_image, class_name: "Image", foreign_key: "cover_image_id"
 
   def self.pending
     self.where(live: false)
@@ -78,5 +80,13 @@ class Event < ActiveRecord::Base
 
   def standard_price
     packages.first ? packages.first.price_to_s : "Free"
+  end
+
+  def active_profile_image
+    profile_image || images.first
+  end
+
+  def active_cover_image
+    cover_image || images.first
   end
 end
