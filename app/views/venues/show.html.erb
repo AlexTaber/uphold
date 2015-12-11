@@ -1,0 +1,10 @@
+<% if is_admin? %>
+  <div class="twelve columns admin-bar">
+    <%= link_to edit_venue_path(@venue) do %>
+      <i class="fa fa-pencil-square-o"></i>
+    <% end %>
+    <%= link_to add_assets_venue_path(@venue) do %>
+      <i class="fa fa-plus"></i>
+    <% end %>
+  </div>
+<% end %>
