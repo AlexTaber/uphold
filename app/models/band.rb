@@ -35,4 +35,8 @@ class Band < ActiveRecord::Base
   def has_past_events?
     past_events.count > 0
   end
+
+  def has_musicians?
+    musicians.count > 0
+  end
 end

@@ -6,7 +6,8 @@ $(document).ready(function() {
 
   var target = $(".venue-container");
   if(target.length > 0) {
-    setTimeout(function() { fadeInVenue(target) }, 400);
+    var targetTop = target.position().top;
+    setTimeout(function() { fadeInVenue(target, targetTop) }, 400);
   }
 
   //button scrolls
@@ -14,17 +15,17 @@ $(document).ready(function() {
   $("#venue-button").click(venueScroll);
 });
 
-function fadeInVenue(target) {
+function fadeInVenue(target, targetTop) {
   if(!venueFade) {
     var targetOffset = $(window).height() * 0.65;
-    var targetHeight = target.position().top - targetOffset;
+    var targetHeight = targetTop - targetOffset;
     if($(window).scrollTop() > targetHeight) {
       target.animate({
         opacity: 1
       }, 1600);
       venueFade = true;
     } else {
-      setTimeout(function() { fadeInVenue(target) }, 400);
+      setTimeout(function() { fadeInVenue(target, targetTop) }, 400);
     }
   }
 }

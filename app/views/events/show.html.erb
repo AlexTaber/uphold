@@ -9,7 +9,7 @@
   </div>
 <% end %>
 
-<div class="event-header-background" style="background: url('<%= @event.active_cover_image.url %>') no-repeat center top fixed; background-size:cover;">
+<div class="event-header-background" style="background: url('<%= @event.active_cover_image.url %>') no-repeat center top; background-size:cover;">
 </div>
 <div class="event-header" id="event-header-content-0">
   <div class="event-header-content" >
@@ -73,7 +73,7 @@
 </div>
 
 <%= link_to venue_path(@event.venue) do %>
-  <div class="twelve columns venue-background" style="background: url('<%= @event.venue.active_cover_image.url %>') no-repeat center top fixed; background-size:cover;">
+  <div class="twelve columns venue-background" style="background: url('<%= @event.venue.active_cover_image.url %>') no-repeat center top; background-size:cover;">
 
     <div class="venue-container">
       <div class="venue-content">

@@ -4,6 +4,7 @@
   height: 100vh;
   position: fixed;
   z-index: -1;
+  -webkit-transform: translateZ(0);
 }
 
 .event-header {
@@ -99,6 +100,7 @@
   width: 100vw;
   height: 72vh;
   z-index: -1;
+  -webkit-transform: translateZ(0);
 }
 
 .venue-container {
