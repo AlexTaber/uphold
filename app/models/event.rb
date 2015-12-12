@@ -36,11 +36,15 @@ class Event < ActiveRecord::Base
   end
 
   def active
-    live && start_time > DateTime.now - 5.hours
+    live && upcoming?
   end
 
-  def inactive
-    !active
+  def upcoming?
+    start_time > DateTime.now - 5.hours
+  end
+
+  def past
+    !upcoming?
   end
 
   def events_to_s(events)

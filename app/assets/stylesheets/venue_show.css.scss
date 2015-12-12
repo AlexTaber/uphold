@@ -11,7 +11,7 @@
   display: inline-block;
   width: 100vw;
   height: 72vh;
-  background-color: rgba($v-lt-gold, 0.85);
+  background-color: rgba($v-lt-gold, 0.55);
   white-space:normal;
 
   .venue-header-content {
@@ -68,7 +68,6 @@
     margin: 0 auto;
     text-align: left;
     margin-bottom: 25px;
-    border-bottom: 1px solid $dark;
 
     p {
       color: $dark;
@@ -80,6 +79,6 @@
   .venue-maps {
     width: 620px;
     height: 300px;
-    max-width: 90vw;
+    max-width: 80vw;
   }
 }
