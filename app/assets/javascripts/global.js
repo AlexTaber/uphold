@@ -2,15 +2,15 @@ var lastScroll = 0;
 var relativeFadeArr = [];
 var isUpdated = true;
 var windowHeight = $(window).height();
-var is_safari = navigator.userAgent.indexOf("Safari") > -1;
-var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
-if ((is_chrome)&&(is_safari)) {is_safari=false;}
+// var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+// var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+// if ((is_chrome)&&(is_safari)) {is_safari=false;}
 
 $(document).ready(function() {
   var targets = $(".relative-fade");
-  if(targets.length > 0 && !is_safari) {
+  if(targets.length > 0) {
     setUpRelativeFadeArr(targets);
-    setInterval(function() { relativeFade(targets) }, 30);
+    setTimeout(function() { relativeFade(targets) }, 30);
   }
 });
 
@@ -36,10 +36,13 @@ function relativeFade(targets) {
     updateRelativeFadeVars();
     isUpdated = true;
   }
+
+  setTimeout(function() { relativeFade(targets) }, 30);
 }
 
 function updateRelativeFadeVars() {
   windowHeight = $(window).height();
+  updateRelativeFadeArr();
 }
 
 function setUpRelativeFadeArr(targets) {
@@ -50,5 +53,14 @@ function setUpRelativeFadeArr(targets) {
       tar_height: tar.height(),
       middle: tar.position().top + (tar.height() * 0.5)
     }
+  }
+}
+
+function updateRelativeFadeArr() {
+  for(var i = 0; i < relativeFadeArr.length; i++) {
+    tar = relativeFadeArr[i];
+    tar.tar_height = tar.selector.height();
+    tar.middle = tar.selector.position().top + (tar.tar_height * 0.5);
+    console.log(tar);
   }
 }

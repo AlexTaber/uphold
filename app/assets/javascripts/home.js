@@ -6,7 +6,7 @@ $(document).ready(function() {
   $(".service").on("mouseenter", serviceEnter);
   $(".service").on("mouseleave", serviceLeave);
 
-  setInterval(checkScroll, 200);
+  setTimeout(checkScroll, 200);
 });
 
 function fadeInHeader() {
@@ -53,4 +53,5 @@ function checkScroll() {
   if(didScroll) {
       fadeInAbouts();
   }
+  setTimeout(checkScroll, 200);
 }

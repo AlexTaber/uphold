@@ -6,7 +6,7 @@ $(document).ready(function() {
 
   var target = $(".venue-container");
   if(target.length > 0) {
-    setInterval(function() { fadeInVenue(target) }, 400);
+    setTimeout(function() { fadeInVenue(target) }, 400);
   }
 
   //button scrolls
@@ -14,16 +14,18 @@ $(document).ready(function() {
   $("#venue-button").click(venueScroll);
 });
 
-function fadeInVenue(child) {
+function fadeInVenue(target) {
   if(!venueFade) {
     var targetOffset = $(window).height() * 0.65;
-    var target = child.position().top - targetOffset;
-    if($(window).scrollTop() > target) {
-      child.animate({
+    var targetHeight = target.position().top - targetOffset;
+    if($(window).scrollTop() > targetHeight) {
+      target.animate({
         opacity: 1
       }, 1600);
       venueFade = true;
     }
+
+    setTimeout(function() { fadeInVenue(target) }, 400);
   }
 }
 
