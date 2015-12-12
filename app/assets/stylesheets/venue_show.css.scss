@@ -11,7 +11,7 @@
   display: inline-block;
   width: 100vw;
   height: 72vh;
-  background-color: rgba($v-lt-gold, 0.55);
+  background-color: rgba($dark, 0.35);
   white-space:normal;
 
   .venue-header-content {
@@ -20,7 +20,7 @@
     margin-left: 10vw;
     width: 80vw;
     font-size: 4vh;
-    color: $dark;
+    color: $v-lt-gold;
     text-align: center;
     padding-top: 20vh;
 
@@ -43,22 +43,18 @@
 }
 
 .venue-about-container {
-  background-color: $v-lt-gold;
+  background-color: $dark;
   text-align: center;
   padding-bottom: 25px;
 
   .venue-about-image {
     position: relative;
-    width: 620px;
-    max-width: 90vw;
-    height: 360px;
-    max-height: 90vw;
-    padding-top: 25px;
-    margin-top: 25px;
-    padding-bottom: 25px;
-    border-top: 10px solid $dark;
-    border-bottom: 10px solid $dark;
+    width: 40vh;
+    height: 40vh;
+    padding: 2vh;
+    background-color: $v-lt-gold;
     object-fit: cover;
+    margin-top: -31vh;
   }
 
   .venue-about-content {
@@ -70,9 +66,9 @@
     margin-bottom: 25px;
 
     p {
-      color: $dark;
+      color: $lt-gold;
       font-size: 3.5vh;
-      font-family: 'Josefin Slab', serif;
+      font-family: 'Droid', serif;
     }
   }
 

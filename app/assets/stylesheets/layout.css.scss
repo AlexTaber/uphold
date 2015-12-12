@@ -37,10 +37,11 @@
   position: relative;
   background-color: $dark;
   height: 18vh;
-  border-bottom: 1px solid rgba($gold,0.5);
+  border-bottom: 1px solid $gold;
 
   &.filler-inverse-container {
     background-color: $v-lt-gold;
+    border-bottom: 1px solid $dark;
   }
 }
 
