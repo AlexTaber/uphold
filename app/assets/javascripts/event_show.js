@@ -23,9 +23,9 @@ function fadeInVenue(target) {
         opacity: 1
       }, 1600);
       venueFade = true;
+    } else {
+      setTimeout(function() { fadeInVenue(target) }, 400);
     }
-
-    setTimeout(function() { fadeInVenue(target) }, 400);
   }
 }
 

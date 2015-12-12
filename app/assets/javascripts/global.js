@@ -2,13 +2,13 @@ var lastScroll = 0;
 var relativeFadeArr = [];
 var isUpdated = true;
 var windowHeight = $(window).height();
-// var is_safari = navigator.userAgent.indexOf("Safari") > -1;
-// var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
-// if ((is_chrome)&&(is_safari)) {is_safari=false;}
+var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+if ((is_chrome)&&(is_safari)) {is_safari=false;}
 
 $(document).ready(function() {
   var targets = $(".relative-fade");
-  if(targets.length > 0) {
+  if(targets.length > 0 && !is_safari) {
     setUpRelativeFadeArr(targets);
     setTimeout(function() { relativeFade(targets) }, 30);
   }
@@ -24,11 +24,9 @@ function relativeFade(targets) {
       var tarSize = (tarHeight * 0.5) + ((windowHeight * 0.5) * 0.8)
       var amt = tarSize - Math.abs(screenMiddle - targetMiddle);
       var opacity = Math.min(Math.max(0, amt/tarSize), 1);
-      if(opacity > 0) {
-        relativeFadeArr[i].selector.css({
-          "opacity": opacity * 1.25
-        });
-      }
+      relativeFadeArr[i].selector.css({
+        "opacity": opacity * 1.25
+      });
     }
     lastScroll = curScroll;
     isUpdated = false;
