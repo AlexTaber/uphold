@@ -9,7 +9,7 @@
   </div>
 <% end %>
 
-<div class="venue-header-background" style="background: url('<%= @venue.active_cover_image.url %>') no-repeat center top fixed; background-size:cover;">
+<div class="venue-header-background" style="background: url('<%= @venue.active_cover_image.url %>') no-repeat center top; background-size:cover;">
 </div>
 <div class="venue-header" id="venue-header-content-0">
   <div class="venue-header-content" >
@@ -19,11 +19,7 @@
   </div>
 </div>
 
-<div class="twelve columns filler-container" id="start">
-  <p class="filler">
-    Learn More
-    <i class="fa fa-arrow-down"></i>
-  </p>
+<div class="twelve columns filler-container filler-inverse-container">
 </div>
 
 <div class="twelve columns venue-about-container">
@@ -40,12 +36,12 @@
 </div>
 
 <% if @venue.has_upcoming_events? %>
-  <div class="twelve columns filler-container" id="start">
-  <p class="filler">
-    Upcoming Events
-    <i class="fa fa-arrow-down"></i>
-  </p>
-</div>
+  <div class="twelve columns filler-container filler-inverse-container" id="start">
+    <p class="filler filler-inverse">
+      Upcoming Events
+      <i class="fa fa-arrow-down"></i>
+    </p>
+  </div>
 
   <div class="twelve columns live-content-container">
     <% @venue.upcoming_events.each do |event| %>

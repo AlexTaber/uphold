@@ -1,0 +1,73 @@
+<% if is_admin? %>
+  <div class="twelve columns admin-bar">
+    <%= link_to edit_band_path(@band) do %>
+      <i class="fa fa-pencil-square-o"></i>
+    <% end %>
+    <%= link_to add_assets_band_path(@band) do %>
+      <i class="fa fa-plus"></i>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="band-header-background" style="background: url('<%= @band.active_cover_image.url %>') no-repeat center top; background-size:cover;">
+</div>
+<div class="band-header" id="band-header-content-0">
+  <div class="band-header-content" >
+    <h3><%= @band.name %> </h3>
+  </div>
+</div>
+
+<div class="twelve columns filler-container filler-inverse-container">
+</div>
+
+<div class="band-image-container">
+  <%= image_tag @band.active_profile_image.url, class: "band-image" %>
+  <div class="band-bio">
+    <p><%= simple_format(@band.bio) %> </p>
+  </div>
+</div>
+
+<% if @band.has_musicians? %>
+  <div class="twelve columns filler-container filler-inverse-container" id="start">
+    <p class="filler filler-inverse">
+      Band Members
+      <i class="fa fa-arrow-down"></i>
+    </p>
+  </div>
+
+  <div class="twelve columns live-content-container">
+    <% @band.musicians.each do |musician| %>
+      <%= render partial: "musicians/musician_card", locals: { musician: musician } %>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @band.has_upcoming_events? %>
+  <div class="twelve columns filler-container filler-inverse-container" id="start">
+    <p class="filler filler-inverse">
+      Upcoming Events
+      <i class="fa fa-arrow-down"></i>
+    </p>
+  </div>
+
+  <div class="twelve columns live-content-container">
+    <% @band.upcoming_events.each do |event| %>
+      <%= render partial: "events/event_card", locals: { event: event } %>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @band.has_past_events? %>
+  <div class="twelve columns filler-container filler-inverse-container">
+    <p class="filler filler-inverse">
+      Past Events
+      <i class="fa fa-arrow-down"></i>
+    </p>
+  </div>
+
+  <div class="twelve columns live-content-container">
+    <% @band.past_events.each do |event| %>
+      <%= render partial: "events/event_card", locals: { event: event } %>
+    <% end %>
+  </div>
+<% end %>

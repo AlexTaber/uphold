@@ -1,9 +1,10 @@
-.event-header-background {
+#event-header-background {
   display: inline-block;
   width: 100vw;
   height: 100vh;
   position: fixed;
   z-index: -1;
+  -webkit-transform: translateZ(0);
 }
 
 .event-header {
@@ -14,7 +15,7 @@
   background-color: rgba($v-lt-gold, 0.85);
   white-space:normal;
 
-  .event-header-content {
+  #event-header-content {
     display: inline-block;
     vertical-align: top;
     margin-left: 10vw;
@@ -42,14 +43,14 @@
   }
 }
 
-.event-info-container {
+#event-info-container {
   position:relative;
   background-color: rgba($dark, 0.8);
   padding-top: 8vh;
   padding-bottom: 8vh;
   min-height: 72vh;
 
-  .event-info {
+  #event-info {
     display: inline-block;
     width: 90vw;
     margin-left: 5vw;
@@ -59,7 +60,7 @@
     margin-bottom: 8vh;
   }
 
-  .event-info-links {
+  #event-info-links {
     display: inline-block;
     vertical-align: top;
     text-align: center;
@@ -68,7 +69,7 @@
     margin-right: 4vw;
     color: $lt-gold;
 
-    .event-info-button {
+    div {
       height: 10vh;
       width: 220px;
       color: $lt-gold;
@@ -89,19 +90,20 @@
   }
 }
 
-.bands-container {
+#bands-container {
   background-color: $dark;
   padding-bottom: 8vh;
 }
 
-.venue-background {
+#venue-background {
   display: inline-block;
   width: 100vw;
   height: 72vh;
   z-index: -1;
+  -webkit-transform: translateZ(0);
 }
 
-.venue-container {
+#venue-container {
   position: static;
   display: inline-block;
   width: 100vw;
@@ -110,7 +112,7 @@
   white-space:normal;
   opacity: 0;
 
-  .venue-content p {
+  #venue-content p {
     display: inline-block;
     vertical-align: top;
     margin-left: 10vw;
@@ -123,7 +125,7 @@
     margin-bottom: 2vh;
   }
 
-  .venue-content h6 {
+  #venue-content h6 {
     font-family: 'Josefin Slab', serif;
     font-size: 3.5vh;
     text-align: center;
@@ -132,19 +134,19 @@
 }
 
 @media (min-width: 700px) {
-  .event-info-container {
-    .event-info {
+  #event-info-container {
+    #event-info {
       width: 40vw;
       margin-left: 5vw;
     }
 
-    .event-info-links {
+    #event-info-links {
       width: 43vw;
       margin-left: 2.5vw;
     }
   }
 
-  .venue-container {
+  #venue-container {
     .venue-content {
       font-size: 6.5vh;
     }

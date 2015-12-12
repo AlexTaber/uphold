@@ -1,5 +1,5 @@
 class BandsController < ApplicationController
-  before_action :find_by_id, only: [:destroy, :show, :update, :add_assets]
+  before_action :find_by_id, only: [:destroy, :show, :edit, :update, :add_assets]
   before_action :require_admin, except: [:show]
 
   def new
@@ -23,6 +23,9 @@ class BandsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
   end
 
   def update

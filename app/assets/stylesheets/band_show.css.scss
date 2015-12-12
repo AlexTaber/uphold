@@ -1,4 +1,4 @@
-.venue-header-background {
+.band-header-background {
   display: inline-block;
   width: 100vw;
   height: 100vh;
@@ -6,7 +6,7 @@
   z-index: -1;
 }
 
-.venue-header {
+.band-header {
   position: static;
   display: inline-block;
   width: 100vw;
@@ -14,7 +14,7 @@
   background-color: rgba($dark, 0.35);
   white-space:normal;
 
-  .venue-header-content {
+  .band-header-content {
     display: inline-block;
     vertical-align: top;
     margin-left: 10vw;
@@ -22,7 +22,7 @@
     font-size: 4vh;
     color: $v-lt-gold;
     text-align: center;
-    padding-top: 20vh;
+    padding-top: 30vh;
 
     h5 {
       font-size: 4vh;
@@ -42,12 +42,12 @@
   }
 }
 
-.venue-about-container {
+.band-image-container {
   background-color: $dark;
   text-align: center;
   padding-bottom: 25px;
 
-  .venue-about-image {
+  img {
     position: relative;
     width: 40vh;
     height: 40vh;
@@ -57,26 +57,25 @@
     margin-top: -31vh;
   }
 
-  .venue-about-content {
+  .band-bio {
+    font-family: 'Droid', serif;
+    color: $lt-gold;
+    font-size: 3.5vh;
     position: relative;
-    width: 620px;
+    width: 420px;
     max-width: 90vw;
     margin: 0 auto;
     text-align: left;
     margin-bottom: 25px;
-
-    p {
-      color: $lt-gold;
-      font-size: 3.5vh;
-      font-family: 'Droid', serif;
-    }
   }
+}
 
-  .venue-maps {
-    width: 618px;
-    height: 300px;
-    max-width: 80vw;
-    padding: 1px;
-    background-color: $dark;
+@media (min-width: 500px) {
+  .band-header {
+    .band-header-content {
+      h3 {
+        font-size: 7vh;
+      }
+    }
   }
 }

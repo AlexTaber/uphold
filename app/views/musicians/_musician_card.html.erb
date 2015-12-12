@@ -1,0 +1,11 @@
+<div class="musician-card-container relative-fade">
+  <div class="musician-card-background" style="background: url('<%= musician.image.url %>') no-repeat center center; background-size:cover;">
+    <div>
+      <%= simple_format(musician.bio) %> </p>
+    </div>
+  </div>
+  <div class="mc-bottom-container">
+    <h5><%= musician.name %></h5>
+    <p><%= musician.instruments %></p>
+  </div>
+</div>
