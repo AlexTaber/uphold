@@ -41,11 +41,11 @@
 
 <% if @venue.has_upcoming_events? %>
   <div class="twelve columns filler-container" id="start">
-  <p class="filler">
-    Upcoming Events
-    <i class="fa fa-arrow-down"></i>
-  </p>
-</div>
+    <p class="filler">
+      Upcoming Events
+      <i class="fa fa-arrow-down"></i>
+    </p>
+  </div>
 
   <div class="twelve columns live-content-container">
     <% @venue.upcoming_events.each do |event| %>

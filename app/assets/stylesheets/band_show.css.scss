@@ -1,0 +1,81 @@
+.band-header-background {
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+}
+
+.band-header {
+  position: static;
+  display: inline-block;
+  width: 100vw;
+  height: 72vh;
+  background-color: rgba($dark, 0.55);
+  white-space:normal;
+
+  .band-header-content {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10vw;
+    width: 80vw;
+    font-size: 4vh;
+    color: $v-lt-gold;
+    text-align: center;
+    padding-top: 30vh;
+
+    h5 {
+      font-size: 4vh;
+    }
+
+    h3 {
+      font-size: 5.5vh;
+    }
+
+    h4 {
+      font-size: 5vh;
+    }
+
+    h6 {
+      font-size: 3.2vh;
+    }
+  }
+}
+
+.band-image-container {
+  background-color: $dark;
+  text-align: center;
+  padding-bottom: 25px;
+
+  img {
+    position: relative;
+    width: 40vh;
+    height: 40vh;
+    padding: 2vh;
+    background-color: $v-lt-gold;
+    object-fit: cover;
+    margin-top: -31vh;
+  }
+
+  .band-bio {
+    font-family: 'Droid', serif;
+    color: $lt-gold;
+    size: 3.5vh;
+    position: relative;
+    width: 420px;
+    max-width: 90vw;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 25px;
+  }
+}
+
+@media (min-width: 500px) {
+  .band-header {
+    .band-header-content {
+      h3 {
+        font-size: 7vh;
+      }
+    }
+  }
+}

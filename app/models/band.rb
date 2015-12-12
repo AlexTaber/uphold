@@ -19,4 +19,20 @@ class Band < ActiveRecord::Base
   def active_cover_image
     cover_image || images.first
   end
+
+  def upcoming_events
+    events.select(&:active).sort_by { |event| event.start_time }
+  end
+
+  def has_upcoming_events?
+    upcoming_events.count > 0
+  end
+
+  def past_events
+    events.select(&:past).sort_by { |event| event.start_time }.reverse!
+  end
+
+  def has_past_events?
+    past_events.count > 0
+  end
 end
