@@ -9,10 +9,10 @@
   </div>
 <% end %>
 
-<div class="event-header-background" style="background: url('<%= @event.active_cover_image.url %>') no-repeat center top; background-size:cover;">
+<div id="event-header-background" style="background: url('<%= @event.active_cover_image.url %>') no-repeat center top; background-size:cover;">
 </div>
 <div class="event-header" id="event-header-content-0">
-  <div class="event-header-content" >
+  <div id="event-header-content" >
     <h5><%= @event.start_date_to_s %> </h5>
     <h6><%= "#{@event.start_time_to_s} | #{@event.venue.city}, #{@event.venue.state}" %></h6>
     <% if @event.headliners.count == 1 %>
@@ -34,12 +34,12 @@
   </p>
 </div>
 
-<div class="twelve columns event-info-container">
-  <div class="event-info">
+<div class="twelve columns" id="event-info-container">
+  <div id="event-info">
     <%= simple_format(@event.description) %>
   </div>
 
-  <div class="event-info-links">
+  <div id="event-info-links">
     <div class="event-info-button" id="bands-button">
       Bands
     </div>
@@ -59,7 +59,7 @@
   </p>
 </div>
 
-<div class="twelve columns bands-container">
+<div class="twelve columns" id="bands-container">
   <% @event.bookings.each do |booking| %>
     <%= render partial: "bands/band_card", locals: { band: booking.band } %>
   <% end %>
@@ -73,10 +73,10 @@
 </div>
 
 <%= link_to venue_path(@event.venue) do %>
-  <div class="twelve columns venue-background" style="background: url('<%= @event.venue.active_cover_image.url %>') no-repeat center top; background-size:cover;">
+  <div class="twelve columns" id="venue-background" style="background: url('<%= @event.venue.active_cover_image.url %>') no-repeat center top; background-size:cover;">
 
-    <div class="venue-container">
-      <div class="venue-content">
+    <div id="venue-container">
+      <div id="venue-content">
         <p><%= @event.venue.name %></p>
         <h6><%= @event.venue.city_state_to_s %> </h6>
       </div>

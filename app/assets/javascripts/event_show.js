@@ -1,13 +1,16 @@
 var venueFade = false;
+var target;
+var targetTop;
 
 $(document).ready(function() {
+  target = $("#venue-container");
+
   $("#event-header-content-" + String(scrollIndex)).hide();
   $("#event-header-content-" + String(scrollIndex)).fadeIn(2000);
 
-  var target = $(".venue-container");
   if(target.length > 0) {
-    var targetTop = target.position().top;
-    setTimeout(function() { fadeInVenue(target, targetTop) }, 400);
+    targetTop = target.position().top;
+    setTimeout(fadeInVenue, 400);
   }
 
   //button scrolls
@@ -15,7 +18,7 @@ $(document).ready(function() {
   $("#venue-button").click(venueScroll);
 });
 
-function fadeInVenue(target, targetTop) {
+function fadeInVenue() {
   if(!venueFade) {
     var targetOffset = $(window).height() * 0.65;
     var targetHeight = targetTop - targetOffset;
@@ -31,20 +34,20 @@ function fadeInVenue(target, targetTop) {
 }
 
 function bandsScroll() {
-  var target = $(".bands-container");
+  var myTarget = $(".bands-container");
   var offset = $(window).height() * 0.1;
-  scrollToEl(target, offset);
+  scrollToEl(myTarget, offset);
 }
 
 function venueScroll() {
-  var target = $(".venue-container");
+  var myTarget = $(".venue-container");
   var offset = $(window).height() * 0.1;
-  scrollToEl(target, offset);
+  scrollToEl(myTarget, offset);
 }
 
-function scrollToEl(target, offset) {
+function scrollToEl(myTarget, offset) {
   console.log("HERE");
   $('html, body').animate({
-      scrollTop: target.offset().top - offset
+      scrollTop: myTarget.offset().top - offset
   }, 1200);
 }

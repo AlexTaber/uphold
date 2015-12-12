@@ -59,6 +59,5 @@ function updateRelativeFadeArr() {
     tar = relativeFadeArr[i];
     tar.tar_height = tar.selector.height();
     tar.middle = tar.selector.position().top + (tar.tar_height * 0.5);
-    console.log(tar);
   }
 }
