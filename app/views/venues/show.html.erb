@@ -1,0 +1,70 @@
+<% if is_admin? %>
+  <div class="twelve columns admin-bar">
+    <%= link_to edit_venue_path(@venue) do %>
+      <i class="fa fa-pencil-square-o"></i>
+    <% end %>
+    <%= link_to add_assets_venue_path(@venue) do %>
+      <i class="fa fa-plus"></i>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="venue-header-background" style="background: url('<%= @venue.active_cover_image.url %>') no-repeat center top fixed; background-size:cover;">
+</div>
+<div class="venue-header" id="venue-header-content-0">
+  <div class="venue-header-content" >
+    <h3><%= @venue.name %> </h3>
+    <h5><%= @venue.street %> </h5>
+    <h6><%= "#{@venue.city}, #{@venue.state}" %> </h6>
+  </div>
+</div>
+
+<div class="twelve columns filler-container" id="start">
+  <p class="filler">
+    Learn More
+    <i class="fa fa-arrow-down"></i>
+  </p>
+</div>
+
+<div class="twelve columns venue-about-container">
+  <%= image_tag @venue.active_profile_image.url, class: "venue-about-image" %>
+  <div class="venue-about-content">
+    <p><%= simple_format(@venue.bio) %> </p>
+  </div>
+  <iframe
+    class="venue-maps"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=<%= MAPS_KEY %>
+      &q=<%= @venue.street %>+<%= @venue.city %>+<%= @venue.state %>" allowfullscreen>
+  </iframe>
+</div>
+
+<% if @venue.has_upcoming_events? %>
+  <div class="twelve columns filler-container" id="start">
+  <p class="filler">
+    Upcoming Events
+    <i class="fa fa-arrow-down"></i>
+  </p>
+</div>
+
+  <div class="twelve columns live-content-container">
+    <% @venue.upcoming_events.each do |event| %>
+      <%= render partial: "events/event_card", locals: { event: event } %>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @venue.has_past_events? %>
+  <div class="twelve columns filler-container filler-inverse-container">
+    <p class="filler filler-inverse">
+      Past Events
+      <i class="fa fa-arrow-down"></i>
+    </p>
+  </div>
+
+  <div class="twelve columns live-content-container">
+    <% @venue.past_events.each do |event| %>
+      <%= render partial: "events/event_card", locals: { event: event } %>
+    <% end %>
+  </div>
+<% end %>
