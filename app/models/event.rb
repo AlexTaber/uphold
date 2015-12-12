@@ -39,6 +39,10 @@ class Event < ActiveRecord::Base
     live && start_time > DateTime.now - 5.hours
   end
 
+  def inactive
+    !active
+  end
+
   def events_to_s(events)
     str = ""
     events.each { |headliner| str += "#{headliner.band.name} | " }

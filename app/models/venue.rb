@@ -24,4 +24,12 @@ class Venue < ActiveRecord::Base
   def active_cover_image
     cover_image || images.first
   end
+
+  def upcoming_events
+    events.select(&:active).sort_by { |event| event.start_time }
+  end
+
+  def past_events
+    events.select(&:inactive).sort_by { |event| event.start_time }.reverse!
+  end
 end

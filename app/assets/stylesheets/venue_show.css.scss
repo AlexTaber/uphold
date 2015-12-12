@@ -1,0 +1,85 @@
+.venue-header-background {
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+}
+
+.venue-header {
+  position: static;
+  display: inline-block;
+  width: 100vw;
+  height: 72vh;
+  background-color: rgba($v-lt-gold, 0.85);
+  white-space:normal;
+
+  .venue-header-content {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10vw;
+    width: 80vw;
+    font-size: 4vh;
+    color: $dark;
+    text-align: center;
+    padding-top: 20vh;
+
+    h5 {
+      font-size: 4vh;
+    }
+
+    h3 {
+      font-size: 5.5vh;
+    }
+
+    h4 {
+      font-size: 5vh;
+    }
+
+    h6 {
+      font-size: 3.2vh;
+    }
+  }
+}
+
+.venue-about-container {
+  background-color: $v-lt-gold;
+  text-align: center;
+  padding-bottom: 25px;
+
+  .venue-about-image {
+    position: relative;
+    width: 620px;
+    max-width: 90vw;
+    height: 360px;
+    max-height: 90vw;
+    padding-top: 25px;
+    margin-top: 25px;
+    padding-bottom: 25px;
+    border-top: 10px solid $dark;
+    border-bottom: 10px solid $dark;
+    object-fit: cover;
+  }
+
+  .venue-about-content {
+    position: relative;
+    width: 620px;
+    max-width: 90vw;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 25px;
+    border-bottom: 1px solid $dark;
+
+    p {
+      color: $dark;
+      font-size: 3.5vh;
+      font-family: 'Josefin Slab', serif;
+    }
+  }
+
+  .venue-maps {
+    width: 620px;
+    height: 300px;
+    max-width: 90vw;
+  }
+}
