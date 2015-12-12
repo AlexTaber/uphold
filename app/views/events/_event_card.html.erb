@@ -1,5 +1,5 @@
 <%= link_to event_path(event) do %>
-  <div class="event-card-container">
+  <div class="event-card-container relative-fade">
     <div class="event-card-background" style="background: url('<%= event.active_profile_image.url %>') no-repeat center center; background-size:cover;">
       <div class="ec-top-container">
         <h6><%= event.start_date_to_s %> </h6>
