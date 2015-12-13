@@ -34,13 +34,13 @@ function fadeInVenue() {
 }
 
 function bandsScroll() {
-  var myTarget = $(".bands-container");
+  var myTarget = $("#bands-container");
   var offset = $(window).height() * 0.1;
   scrollToEl(myTarget, offset);
 }
 
 function venueScroll() {
-  var myTarget = $(".venue-container");
+  var myTarget = $("#venue-container");
   var offset = $(window).height() * 0.1;
   scrollToEl(myTarget, offset);
 }
