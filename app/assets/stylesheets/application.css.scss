@@ -3,7 +3,6 @@
 @import "_skeleton";
 @import "helpers";
 @import "home";
-@import "layout";
 @import "live";
 @import "event_card";
 @import "event_show";
@@ -12,6 +11,7 @@
 @import "venue_show";
 @import "band_show";
 @import "musician_card";
+@import "layout";
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

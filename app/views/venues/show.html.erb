@@ -19,7 +19,7 @@
   </div>
 </div>
 
-<div class="twelve columns filler-container filler-inverse-container">
+<div class="twelve columns filler-container">
 </div>
 
 <div class="twelve columns venue-about-container">
@@ -36,8 +36,8 @@
 </div>
 
 <% if @venue.has_upcoming_events? %>
-  <div class="twelve columns filler-container filler-inverse-container" id="start">
-    <p class="filler filler-inverse">
+  <div class="twelve columns filler-container" id="start">
+    <p class="filler">
       Upcoming Events
       <i class="fa fa-arrow-down"></i>
     </p>
@@ -51,8 +51,8 @@
 <% end %>
 
 <% if @venue.has_past_events? %>
-  <div class="twelve columns filler-container filler-inverse-container">
-    <p class="filler filler-inverse">
+  <div class="twelve columns filler-container">
+    <p class="filler">
       Past Events
       <i class="fa fa-arrow-down"></i>
     </p>

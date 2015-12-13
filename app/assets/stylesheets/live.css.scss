@@ -17,7 +17,7 @@
   display: inline-block;
   width: 100vw;
   height: 72vh;
-  background-color: rgba($v-lt-gold, 0.85);
+  background-color: rgba($dark, 0.8);
   white-space:normal;
 
   .live-header-content {
@@ -26,7 +26,7 @@
     margin-left: 10vw;
     width: 80vw;
     font-size: 4vh;
-    color: $dark;
+    color: $lt-gold;
     text-align: center;
     padding-top: 6vh;
 
@@ -48,14 +48,14 @@
   }
 
   .live-header-content:hover {
-    color: $dk-gold;
+    color: $grey;
   }
 }
 
 .live-arrow {
   width: 10vw;
   font-size: 4vh;
-  color: $dark;
+  color: $lt-gold;
   margin-top: 31vh;
   padding-top: 2vh;
   padding-bottom: 2vh;
@@ -65,7 +65,7 @@
 }
 
 .live-arrow:hover {
-  color: $dk-gold;
+  color: $grey;
   cursor: pointer;
 }
 
