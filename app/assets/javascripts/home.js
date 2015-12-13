@@ -11,7 +11,11 @@ $(document).ready(function() {
 
 function fadeInHeader() {
   $(".home-header-container").hide();
-  $(".home-header-container").fadeIn(3000);
+  $(".home-header-container").fadeIn(1200);
+  $(".home-header-logo").animate({
+    "height": "44vh",
+    "marginTop": "+=2vh"
+  }, 1200);
 }
 
 function serviceEnter(e) {
