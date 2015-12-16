@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<div class="twelve columns filler-container filler-inverse-container">
+<div class="twelve columns filler-container">
 </div>
 
 <div class="band-image-container">
@@ -28,8 +28,8 @@
 </div>
 
 <% if @band.has_musicians? %>
-  <div class="twelve columns filler-container filler-inverse-container" id="start">
-    <p class="filler filler-inverse">
+  <div class="twelve columns filler-container" id="start">
+    <p class="filler">
       Band Members
       <i class="fa fa-arrow-down"></i>
     </p>
@@ -43,8 +43,8 @@
 <% end %>
 
 <% if @band.has_upcoming_events? %>
-  <div class="twelve columns filler-container filler-inverse-container" id="start">
-    <p class="filler filler-inverse">
+  <div class="twelve columns filler-container" id="start">
+    <p class="filler">
       Upcoming Events
       <i class="fa fa-arrow-down"></i>
     </p>
@@ -58,8 +58,8 @@
 <% end %>
 
 <% if @band.has_past_events? %>
-  <div class="twelve columns filler-container filler-inverse-container">
-    <p class="filler filler-inverse">
+  <div class="twelve columns filler-container">
+    <p class="filler">
       Past Events
       <i class="fa fa-arrow-down"></i>
     </p>

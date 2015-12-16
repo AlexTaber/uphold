@@ -2,7 +2,7 @@
 <div class="mobile-nav-container">
   <nav class="mobile-nav header-nav">
     <li>
-      <%= link_to "UPHOLD", root_path %>
+      <%= link_to "UPHOLD", root_path, class: "home-link"  %>
     </li>
     <% if is_admin? %>
       <%= render partial: "layouts/admin_nav" %>
@@ -37,11 +37,9 @@
 <!-- Desktop Nav -->
 <div class="desktop-nav-container">
   <nav class="desktop-nav header-nav">
-    <%= link_to root_path do %>
-      <li>
-        UPHOLD
-      </li>
-    <% end %>
+    <li>
+      <%= link_to "UPHOLD", root_path, class: "home-link" %>
+    </li>
 
     <% if is_admin? %>
       <%= render partial: "layouts/admin_nav" %>

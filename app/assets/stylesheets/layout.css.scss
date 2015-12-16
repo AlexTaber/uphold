@@ -1,3 +1,7 @@
+.gold {
+  color: gold;
+}
+
 .content-container {
   padding-top: $nav-height;
 }
@@ -18,36 +22,36 @@
 .buy-button {
   height: 10vh;
   width: 220px;
-  color: $dark;
+  color: $lt-gold;
   font-size: 5vh;
   margin: 0 auto;
   margin-top: 5vh;
   padding-top: 2.5vh;
-  border: 2px solid $dark;
+  border: 2px solid $lt-gold;
   border-radius: 6px;
 
   &:hover {
-    color: $dk-gold;
-    border-color: $dk-gold;
+    color: $grey;
+    border-color: $grey;
     cursor: pointer;
   }
 }
 
 .filler-container {
   position: relative;
-  background-color: $dark;
+  background-color: $lt-grey;
   height: 18vh;
-  border-bottom: 1px solid $gold;
+  border-bottom: 1px solid $dark;
 
   &.filler-inverse-container {
-    background-color: $v-lt-gold;
+    background-color: $dk-grey;
     border-bottom: 1px solid $dark;
   }
 }
 
 .filler {
   font-family: 'Josefin Slab', serif;
-  color: $gold;
+  color: $dark;
   font-size: 5.5vh;
   font-weight: 600;
   margin: 0;
