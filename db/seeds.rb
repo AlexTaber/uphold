@@ -103,7 +103,7 @@ end
   end
 
   event_image = Image.create(
-    url: "/assets/concert",
+    url: "https://s3.amazonaws.com/uphold-assets/concert.jpg",
     imageable_id: event.id,
     imageable_type: "Event"
   )
